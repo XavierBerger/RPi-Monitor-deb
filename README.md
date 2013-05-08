@@ -1,8 +1,3 @@
--------
-**WARNING: The current code may have bugs. Program is still in development.**
--------
-
-
 # RPi-Monitor-deb
 
 **Author**: Xavier Berger
