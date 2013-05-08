@@ -1,1 +1,7 @@
-
+Package: rpimonitor
+Version: 1.0
+Architecture: all
+Section: misc
+Depends: perl, librrds-perl, libhttp-daemon-perl, libhttp-daemon-ssl-perl
+Maintainer: Xavier Berger <berger.xavier@gmail.com>
+Description: RPi-Monitor is a self monitoring application designed to run on Raspberry Pi.
