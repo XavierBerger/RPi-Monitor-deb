@@ -16,7 +16,7 @@
 #
 DPKGSRC=dpkg-src
 RPIMONITOR=../../RPi-Monitor
-VERSION=1.0-1
+VERSION=$(cat ../RPi-Monitor/VERSION)
 
 #echo -e "\033[31mWARNING: the directory $(pwd)/${DPKGSRC} will be destroyed\033[0m"
 #echo -ne "\033[31mContinue yes/no [no]:\033[0m"
@@ -38,18 +38,22 @@ cp -a ../debian DEBIAN
 mkdir -p etc/init.d etc/default
 cp ${RPIMONITOR}/init/default/rpimonitor etc/default
 cp ${RPIMONITOR}/init/sysv/rpimonitor etc/init.d
-sed -i 's/DAEMON=.*/DAEMON="\/usr\/bin\/rpimonitord"/' etc/init.d/rpimonitor
 cp ${RPIMONITOR}/rpimonitor/rpimonitord.conf etc
-sed -i 's/#webroot=/webroot=\/usr\/share\/rpimonitor\/web/' etc/rpimonitord.conf
 mkdir -p usr/bin usr/share/rpimonitor/certs
 cp ${RPIMONITOR}/rpimonitor/rpimonitord usr/bin
 cp -a ${RPIMONITOR}/rpimonitor/web/ usr/share/rpimonitor
 
-echo "Creating manpage"
+echo "Post processing"
+sed -i 's/#webroot=/webroot=\/usr\/share\/rpimonitor\/web/' etc/rpimonitord.conf
+sed -i 's/DAEMON=.*/DAEMON="\/usr\/bin\/rpimonitord"/' etc/init.d/rpimonitor
+sed -i "s/{DEVELOPMENT}/${VERSION}-1/" DEBIAN/control
+sed -i "s/{DEVELOPMENT}/$VERSION/" usr/bin/rpimonitord
+sed -i "s/{DEVELOPMENT}/$VERSION/" usr/share/rpimonitor/web/js/rpimonitor.js
+
 mkdir -p usr/share/man/man1
 ../help2man.pl usr/bin/rpimonitord $VERSION | gzip -c > usr/share/man/man1/rpimonitord.1.gz
 
 echo "Building package"
 find . -type f ! -regex '.*?DEBIAN.*' -printf '%P ' | xargs md5sum > DEBIAN/md5sums
 cd ..
-dpkg -b ${DPKGSRC} packages/rpimonitor_${VERSION}_all.deb
+dpkg -b ${DPKGSRC} packages/rpimonitor_${VERSION}-1_all.deb

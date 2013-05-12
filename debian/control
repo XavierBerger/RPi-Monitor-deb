@@ -1,5 +1,5 @@
 Package: rpimonitor
-Version: 1.0
+Version: {DEVELOPMENT}
 Architecture: all
 Section: misc
 Depends: perl, librrds-perl, libhttp-daemon-perl, libhttp-daemon-ssl-perl
