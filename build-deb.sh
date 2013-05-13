@@ -27,7 +27,7 @@ VERSION=$(cat ../RPi-Monitor/VERSION)
 #fi
 
 echo "Removing old ${DPKGSRC} directory"
-rm -fr ${DPKGSRC}
+sudo rm -fr ${DPKGSRC}
 
 echo "Creating a new ${DPKGSRC} directory"
 mkdir ${DPKGSRC}
@@ -55,5 +55,6 @@ mkdir -p usr/share/man/man1
 
 echo "Building package"
 find . -type f ! -regex '.*?DEBIAN.*' -printf '%P ' | xargs md5sum > DEBIAN/md5sums
+sudo chown -R root:root etc usr
 cd ..
 dpkg -b ${DPKGSRC} packages/rpimonitor_${VERSION}-1_all.deb

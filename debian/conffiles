@@ -1,3 +1,2 @@
 /etc/rpimonitord.conf
 /etc/default/rpimonitor
-/usr/share/rpimonitor/web/stat/*.rrd

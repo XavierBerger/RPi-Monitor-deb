@@ -1,3 +1,11 @@
+rpimonitor (1.1-1) UNRELEASED; urgency=low
+
+  * Add 'Friends' to add links to RPi-Monitor from different RPi.
+  * Improve uptime display in status page and add RPi clock.
+  * Fixed some bugs.
+
+ -- Xavier Berger <berger.xavier@gmail.com>  Mon, 15 May 2013 12:00:00 +0200
+
 rpimonitor (1.0-1) UNRELEASED; urgency=low
 
   * v1.0-1 Initial release.

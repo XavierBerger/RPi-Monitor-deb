@@ -1,5 +1,6 @@
 #!/bin/bash
 if [ "$1" = "remove" ]; then
 	/etc/init.d/rpimonitor stop
+	kill -9 $(ps -C rpimonitord -o pid= | perl -ne 'chomp and print "$_ "') > /dev/null 2>&1
 	update-rc.d -f rpimonitor remove
 fi
