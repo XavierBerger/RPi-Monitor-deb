@@ -1,4 +1,5 @@
 #!/bin/bash
+update-rc.d -f rpimonitor remove 
 update-rc.d -f rpimonitor defaults
 kill -9 $(ps -C rpimonitord -o pid= | perl -ne 'chomp and print "$_ "') > /dev/null 2>&1
 /etc/init.d/rpimonitor start
