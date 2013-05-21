@@ -1,9 +1,7 @@
 #!/bin/bash
+rm /etc/cron.daily/rpimonitorupdatestatus >/dev/null 2>&1
+rm /etc/apt/apt.conf.d/99rpimonitorupdatestatus  >/dev/null 2>&1
 update-rc.d -f rpimonitor remove 
 update-rc.d -f rpimonitor defaults
 kill -9 $(ps -C rpimonitord -o pid= | perl -ne 'chomp and print "$_ "') > /dev/null 2>&1
 /etc/init.d/rpimonitor start
-echo "LANG=C;apt-get upgrade --dry-run| perl -ne '/(.*upgraded.*installed)/ and print \$1' > /usr/share/rpimonitor/updatestatus.txt" > /etc/cron.daily/rpimonitorupdatestatus
-chmod +x /etc/cron.daily/rpimonitorupdatestatus
-echo "DPkg::Post-Invoke {\"/etc/cron.daily/rpimonitorupdatestatus\"; };" > /etc/apt/apt.conf.d/99rpimonitorupdatestatus
-echo "rpimonitor restart needed" > /usr/share/rpimonitor/updatestatus.txt

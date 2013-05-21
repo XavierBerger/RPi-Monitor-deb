@@ -35,13 +35,12 @@ mkdir ${DPKGSRC}
 echo "Constructing debian package structure"
 cd ${DPKGSRC}
 cp -a ../debian DEBIAN
-mkdir -p etc/init.d etc/default
-cp ${RPIMONITOR}/init/default/rpimonitor etc/default
-cp ${RPIMONITOR}/init/sysv/rpimonitor etc/init.d
+cp -a ${RPIMONITOR}/init etc
 cp ${RPIMONITOR}/rpimonitor/rpimonitord.conf etc
-mkdir -p usr/bin usr/share/rpimonitor/certs
+mkdir -p usr/bin usr/share/rpimonitor
 cp ${RPIMONITOR}/rpimonitor/rpimonitord usr/bin
 cp -a ${RPIMONITOR}/rpimonitor/web/ usr/share/rpimonitor
+cp ${RPIMONITOR}/rpimonitor/updatestatus.txt usr/share/rpimonitor
 
 echo "Post processing"
 sed -i 's/#webroot=/webroot=\/usr\/share\/rpimonitor\/web/' etc/rpimonitord.conf
