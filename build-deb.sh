@@ -18,13 +18,14 @@ DPKGSRC=dpkg-src
 RPIMONITOR=../../RPi-Monitor
 VERSION=$(cat ../RPi-Monitor/VERSION)
 
-#echo -e "\033[31mWARNING: the directory $(pwd)/${DPKGSRC} will be destroyed\033[0m"
-#echo -ne "\033[31mContinue yes/no [no]:\033[0m"
-#read continue
-#if [[ $continue != *"yes"* ]]; then
-# echo -e "You must enter \033[1myes\033[0m to continue. Script aborted".
-# exit
-#fi
+echo "Is changelog up to date for version $(cat ../RPi-Monitor/VERSION)"
+echo -e "\033[31m\033[1mWARNING\033[0m: the directory $(pwd)/${DPKGSRC} will be destroyed"
+echo -ne "Continue yes/no [no]:"
+read continue
+if [[ $continue != *"yes"* ]]; then
+ echo -e "You must enter \033[1myes\033[0m to continue. Script aborted".
+ exit
+fi
 
 echo "Removing old ${DPKGSRC} directory"
 sudo rm -fr ${DPKGSRC}

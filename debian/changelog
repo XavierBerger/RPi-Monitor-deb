@@ -1,3 +1,24 @@
+rpimonitor (1.3-1) UNRELEASED; urgency=low
+
+  * Bugs fix related to dependencies of package v1.2.
+  * Added package status improvement.
+  * Improve embedded server to work with a secure reverse proxy.
+  * Add governor info in CPU status.
+
+ -- Xavier Berger <berger.xavier@gmail.com>  Mon, 15 May 2013 12:00:00 +0200
+
+rpimonitor (1.2-1) UNRELEASED; urgency=low
+
+  * Bugs fix related to uptime.
+  * Adding preload spinner for statistics.
+  * Added package status into status page.
+  * Prepare embedded server to work with a secure reverse proxy.
+  * Remove SSL embedded capability (which is not working in RPi) to reduce dependencies.
+
+
+ -- Xavier Berger <berger.xavier@gmail.com>  Mon, 15 May 2013 12:00:00 +0200
+
+
 rpimonitor (1.1-1) UNRELEASED; urgency=low
 
   * Add 'Friends' to add links to RPi-Monitor from different RPi.
