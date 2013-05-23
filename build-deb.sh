@@ -18,7 +18,7 @@ DPKGSRC=dpkg-src
 RPIMONITOR=../../RPi-Monitor
 VERSION=$(cat ../RPi-Monitor/VERSION)
 
-echo "Is changelog up to date for version $(cat ../RPi-Monitor/VERSION)"
+echo "Is changelog up to date for version $(cat ../RPi-Monitor/VERSION)?"
 echo -e "\033[31m\033[1mWARNING\033[0m: the directory $(pwd)/${DPKGSRC} will be destroyed"
 echo -ne "Continue yes/no [no]:"
 read continue
