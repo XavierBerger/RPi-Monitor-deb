@@ -2,8 +2,13 @@ rpimonitor (1.4-1) UNRELEASED; urgency=low
 
   * Fix bugs 
   * Add package to be upgraded popover listing
+  * Add firmware version
+  * Increase shared memory to 8kb to support bigger json due to package upgrade status list
+  * Add warning before closing or refreshing sheelinabox page to avoid unwanted connection closing
+  * Remove graph without real meaning (voltage, cpu_frequency)
+  * Remember last graph displayed (to make update easier just by clicking Statistics menu)
 
- -- Xavier Berger <berger.xavier@gmail.com>  Mon, 25 May 2013 12:00:00 +0200
+ -- Xavier Berger <berger.xavier@gmail.com>  Thu, 30 May 2013 12:00:00 +0200
 
 
 rpimonitor (1.3-1) UNRELEASED; urgency=low
@@ -13,7 +18,7 @@ rpimonitor (1.3-1) UNRELEASED; urgency=low
   * Improve embedded server to work with a secure reverse proxy.
   * Add governor info in CPU status.
 
- -- Xavier Berger <berger.xavier@gmail.com>  Mon, 22 May 2013 12:00:00 +0200
+ -- Xavier Berger <berger.xavier@gmail.com>  Tue, 22 May 2013 12:00:00 +0200
 
 rpimonitor (1.2-1) UNRELEASED; urgency=low
 
@@ -24,7 +29,7 @@ rpimonitor (1.2-1) UNRELEASED; urgency=low
   * Remove SSL embedded capability (which is not working in RPi) to reduce dependencies.
 
 
- -- Xavier Berger <berger.xavier@gmail.com>  Mon, 19 May 2013 12:00:00 +0200
+ -- Xavier Berger <berger.xavier@gmail.com>  Sun, 19 May 2013 12:00:00 +0200
 
 
 rpimonitor (1.1-1) UNRELEASED; urgency=low
@@ -33,7 +38,7 @@ rpimonitor (1.1-1) UNRELEASED; urgency=low
   * Improve uptime display in status page and add RPi clock.
   * Fixed some bugs.
 
- -- Xavier Berger <berger.xavier@gmail.com>  Mon, 15 May 2013 12:00:00 +0200
+ -- Xavier Berger <berger.xavier@gmail.com>  Wed, 15 May 2013 12:00:00 +0200
 
 rpimonitor (1.0-1) UNRELEASED; urgency=low
 
