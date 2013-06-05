@@ -1,3 +1,11 @@
+rpimonitor (1.5-1) UNRELEASED; urgency=low
+
+  * Fix bugs highligthed by validator.w3.org
+  * Fix bugs avoiding RPi-Monitor to work properly with an external web server
+
+ -- Xavier Berger <berger.xavier@gmail.com>  Thu, 00 Jun 2013 12:00:00 +0200
+
+
 rpimonitor (1.4-1) UNRELEASED; urgency=low
 
   * Fix bugs 
@@ -9,7 +17,6 @@ rpimonitor (1.4-1) UNRELEASED; urgency=low
   * Remember last graph displayed (to make update easier just by clicking Statistics menu)
 
  -- Xavier Berger <berger.xavier@gmail.com>  Thu, 30 May 2013 12:00:00 +0200
-
 
 rpimonitor (1.3-1) UNRELEASED; urgency=low
 
@@ -30,7 +37,6 @@ rpimonitor (1.2-1) UNRELEASED; urgency=low
 
 
  -- Xavier Berger <berger.xavier@gmail.com>  Sun, 19 May 2013 12:00:00 +0200
-
 
 rpimonitor (1.1-1) UNRELEASED; urgency=low
 

@@ -42,6 +42,7 @@ mkdir -p usr/bin usr/share/rpimonitor
 cp ${RPIMONITOR}/rpimonitor/rpimonitord usr/bin
 cp -a ${RPIMONITOR}/rpimonitor/web/ usr/share/rpimonitor
 cp ${RPIMONITOR}/rpimonitor/updatestatus.txt usr/share/rpimonitor
+rm usr/share/rpimonitor/web/stat/*
 
 echo "Post processing"
 sed -i 's/#webroot=/webroot=\/usr\/share\/rpimonitor\/web/' etc/rpimonitord.conf
