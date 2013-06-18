@@ -18,10 +18,11 @@ DPKGSRC=dpkg-src
 RPIMONITOR=../../RPi-Monitor
 VERSION=$(cat ../RPi-Monitor/VERSION)
 
-echo "Is changelog up to date for version $(cat ../RPi-Monitor/VERSION)?"
+#echo "Is changelog up to date for version $(cat ../RPi-Monitor/VERSION)?"
 echo -e "\033[31m\033[1mWARNING\033[0m: the directory $(pwd)/${DPKGSRC} will be destroyed"
 echo -ne "Continue yes/no [no]:"
 read continue
+vi debian/changelog
 if [[ $continue != *"yes"* ]]; then
  echo -e "You must enter \033[1myes\033[0m to continue. Script aborted".
  exit
@@ -37,22 +38,25 @@ echo "Constructing debian package structure"
 cd ${DPKGSRC}
 cp -a ../debian DEBIAN
 cp -a ${RPIMONITOR}/init etc
+mkdir -p usr/bin usr/share/rpimonitor/scripts etc/rpimonitord.conf.d
 cp ${RPIMONITOR}/rpimonitor/rpimonitord.conf etc
-mkdir -p usr/bin usr/share/rpimonitor
+cp ${RPIMONITOR}/rpimonitor/default.conf etc/rpimonitord.conf.d
 cp ${RPIMONITOR}/rpimonitor/rpimonitord usr/bin
 cp -a ${RPIMONITOR}/rpimonitor/web/ usr/share/rpimonitor
 cp ${RPIMONITOR}/rpimonitor/updatestatus.txt usr/share/rpimonitor
 rm usr/share/rpimonitor/web/stat/*
 
 echo "Post processing"
-sed -i 's/#webroot=/webroot=\/usr\/share\/rpimonitor\/web/' etc/rpimonitord.conf
-sed -i 's/DAEMON=.*/DAEMON="\/usr\/bin\/rpimonitord"/' etc/init.d/rpimonitor
 sed -i "s/{DEVELOPMENT}/${VERSION}-1/" DEBIAN/control
 sed -i "s/{DEVELOPMENT}/$VERSION/" usr/bin/rpimonitord
 sed -i "s/{DEVELOPMENT}/$VERSION/" usr/share/rpimonitor/web/js/rpimonitor.js
 
 mkdir -p usr/share/man/man1
 ../help2man.pl usr/bin/rpimonitord $VERSION | gzip -c > usr/share/man/man1/rpimonitord.1.gz
+mkdir -p usr/share/man/man5 
+cat ${RPIMONITOR}/rpimonitord.conf ${RPIMONITOR}/default.conf > rpimonitord.tmp
+../conf2man.pl rpimonitord.tmp $VERSION | gzip -c > usr/share/man/man5/rpimonitord.conf.5.gz
+rm -f rpimonitord.tmp
 
 echo "Building package"
 find . -type f ! -regex '.*?DEBIAN.*' -printf '%P ' | xargs md5sum > DEBIAN/md5sums

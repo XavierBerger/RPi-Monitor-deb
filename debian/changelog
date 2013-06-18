@@ -1,9 +1,22 @@
+rpimonitor (2.0-1) UNRELEASED; urgency=low
+
+  * Add redirection for shellinabox for url /shellinabox
+  * Add a manpage dedicated to configuration: man rpimonitord.conf
+  * Change in configuration files to make status and statistic pages fully configurable
+  * Add post-process formula to have more readable values
+  * Curves displayed in graph are now fully configurable
+  * Remove Legend position and timezone from graphs
+  * Make legend of graph configurable
+
+ -- Xavier Berger <berger.xavier@gmail.com>  Thu, 00 Jun 2013 12:00:00 +0200
+
+
 rpimonitor (1.5-1) UNRELEASED; urgency=low
 
   * Fix bugs highligthed by validator.w3.org
   * Fix bugs avoiding RPi-Monitor to work properly with an external web server
 
- -- Xavier Berger <berger.xavier@gmail.com>  Thu, 00 Jun 2013 12:00:00 +0200
+ -- Xavier Berger <berger.xavier@gmail.com>  Thu, 05 Jun 2013 12:00:00 +0200
 
 
 rpimonitor (1.4-1) UNRELEASED; urgency=low

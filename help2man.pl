@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-@ARGV or die "USAGE: $0 [program] [version] | gzip -c > program.1.gz";
+@ARGV or die "USAGE: $0 [program] [version] | gzip -c > program.5.gz";
 
 my $program=shift or die "You must specify the program to execute\n";
 -f $program or die "$program is not existing\n";
