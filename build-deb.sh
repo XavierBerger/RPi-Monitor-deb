@@ -54,8 +54,8 @@ sed -i "s/{DEVELOPMENT}/$VERSION/" usr/share/rpimonitor/web/js/rpimonitor.js
 mkdir -p usr/share/man/man1
 ../help2man.pl usr/bin/rpimonitord $VERSION | gzip -c > usr/share/man/man1/rpimonitord.1.gz
 mkdir -p usr/share/man/man5 
-cat ${RPIMONITOR}/rpimonitord.conf ${RPIMONITOR}/default.conf > rpimonitord.tmp
-../conf2man.pl rpimonitord.tmp $VERSION | gzip -c > usr/share/man/man5/rpimonitord.conf.5.gz
+cat ${RPIMONITOR}/rpimonitor/rpimonitord.conf ${RPIMONITOR}/rpimonitor/default.conf > rpimonitord.conf
+../conf2man.pl rpimonitord.conf $VERSION | gzip -c > usr/share/man/man5/rpimonitord.conf.5.gz
 rm -f rpimonitord.tmp
 
 echo "Building package"
