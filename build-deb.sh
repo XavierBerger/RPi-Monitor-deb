@@ -22,11 +22,12 @@ VERSION=$(cat ../RPi-Monitor/VERSION)
 echo -e "\033[31m\033[1mWARNING\033[0m: the directory $(pwd)/${DPKGSRC} will be destroyed"
 echo -ne "Continue yes/no [no]:"
 read continue
-vi debian/changelog
 if [[ $continue != *"yes"* ]]; then
  echo -e "You must enter \033[1myes\033[0m to continue. Script aborted".
- exit
+ exit 1
 fi
+
+vi debian/changelog
 
 echo "Removing old ${DPKGSRC} directory"
 sudo rm -fr ${DPKGSRC}
