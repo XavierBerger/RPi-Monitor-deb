@@ -1,6 +1,8 @@
 rpimonitor (2.0-1) UNRELEASED; urgency=low
 
-  * Remplace apt auto update by a message to avoid apt command slowdown
+  * Add the possibility to draw static values
+  * Remove update package status update after apt-get command. Update command
+    will have to be executed manually.
   * Add redirection for shellinabox for url /shellinabox
   * Add a manpage dedicated to configuration: man rpimonitord.conf
   * Change in configuration files to make status and statistic pages fully configurable
