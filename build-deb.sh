@@ -38,6 +38,7 @@ mkdir ${DPKGSRC}
 echo "Constructing debian package structure"
 cd ${DPKGSRC}
 cp -a ../debian DEBIAN
+sed -i "s/{DATE}/$(LANG=EN; date)/" DEBIAN/changelog
 cp -a ${RPIMONITOR}/init etc
 mkdir -p usr/bin usr/share/rpimonitor/scripts etc/rpimonitord.conf.d
 cp ${RPIMONITOR}/rpimonitor/rpimonitord.conf etc
