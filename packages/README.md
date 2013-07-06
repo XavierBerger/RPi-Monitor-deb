@@ -1,7 +1,9 @@
-#[RPi-Monitor](http://rpi-experiences.bl)ogger.fr
+#[RPi-Monitor](http://rpi-experiences.blogger.fr)
+
+**RPi-Monitor** is a self monitoring application designed to run on [Raspberry Pi](http://www.raspberrypi.org/).
 
 ## Quick start
-Download the latest file published in this page and refer to RPi-Monitor official web site to see details about installation:
+To install and use *RPi-Monitor**, download the latest file published in this page and refer to **RPi-Monitor** official web site to see details about the installation:
 
 * [RPi-Monitor Overview](http://rpi-experiences.blogspot.fr/p/rpi-monitor.html)
 * [RPi-Monitor articles](http://rpi-experiences.blogspot.fr/p/rpi-monitor-articles.html)
