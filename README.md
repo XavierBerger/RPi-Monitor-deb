@@ -1,14 +1,9 @@
 # RPi-Monitor-deb
 
-**Author**: Xavier Berger
+**RPi-Monitor-deb** is the project packaging [**RPi-Monitor**](https://github.com/XavierBerger/RPi-Monitor) into a debian package. **RPi-Monitor** is a self monitoring application designed to run on [Raspberry Pi](http://www.raspberrypi.org/).
 
-**Blog**: [RPi-Experience](http://rpi-experiences.blogspot.fr/)
+Installation, usage and customization are detailed into the official web site: [http://rpi-experiences.blogspot.fr/](http://rpi-experiences.blogspot.fr/)
 
-## About
-
-**RPi-Monitor-deb** is the project packaging **RPi-Monitor** into a debian package.
-**RPi-Monitor** is a self monitoring application designed to run on [Raspberry Pi](http://raspberrypi.org).
-Fr detail aboud **RPi-Monitor**, refer to <https://github.com/XavierBerger/RPi-Monitor>
 
 ## Prerequisite
 
@@ -27,3 +22,9 @@ Build package:
 
     cd RPi-Monitor-deb
     ./build-deb.sh
+    
+## Authors
+
+**Xavier Berger**
+
++ [http://rpi-experiences.blogspot.fr](http://rpi-experiences.blogspot.fr)
