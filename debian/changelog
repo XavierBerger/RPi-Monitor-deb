@@ -1,3 +1,13 @@
+rpimonitor (2.1-1) UNRELEASED; urgency=low
+
+  * Precheck result before adding in RRD to improve graphs
+  * Add the possibility to customize axis with graph_options parameter
+  * Add timeout for KPI reading to avoid possible hang when reading external sensors
+  * Change keywork ds_graph_opts by ds_graph_options to be consistant with javascriptrrd and flot documentation
+  * Fix Issue #6: a stranger rpimonitor.conf
+
+ -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+
 rpimonitor (2.0-1) UNRELEASED; urgency=low
 
   * Add the possibility to draw static values
@@ -11,7 +21,7 @@ rpimonitor (2.0-1) UNRELEASED; urgency=low
   * Remove Legend position and timezone from graphs
   * Make legend of graph configurable
 
- -- Xavier Berger <berger.xavier@gmail.com>  Thu, 00 Jun 2013 12:00:00 +0200
+ -- Xavier Berger <berger.xavier@gmail.com>  Thu, 28 Jun 2013 12:00:00 +0200
 
 
 rpimonitor (1.5-1) UNRELEASED; urgency=low
