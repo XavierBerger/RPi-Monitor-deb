@@ -58,7 +58,7 @@ mkdir -p usr/share/man/man1
 mkdir -p usr/share/man/man5 
 cat ${RPIMONITOR}/rpimonitor/rpimonitord.conf ${RPIMONITOR}/rpimonitor/default.conf > rpimonitord.conf
 ../conf2man.pl rpimonitord.conf $VERSION | gzip -c > usr/share/man/man5/rpimonitord.conf.5.gz
-rm -f rpimonitord.tmp
+rm -f rpimonitord.conf
 
 echo "Building package"
 find . -type f ! -regex '.*?DEBIAN.*' -printf '%P ' | xargs md5sum > DEBIAN/md5sums
