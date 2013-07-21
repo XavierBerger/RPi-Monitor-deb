@@ -1,3 +1,13 @@
+rpimonitor (2.2-1) UNRELEASED; urgency=low
+
+  * Add the possibility to create multiple status and statistics pages
+  * Add process respawner to improve reliability of rpimonitord
+  * Add HTML5 cache for json data to speedup page display and offload RPi
+  * bug fix: Embedded server won't start on 443 or 80 ports (issue #8)
+  * bug fix: cleanup code according to comment described in issue #7 
+
+ -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+
 rpimonitor (2.1-1) UNRELEASED; urgency=low
 
   * Precheck result before adding in RRD to improve graphs
@@ -6,7 +16,7 @@ rpimonitor (2.1-1) UNRELEASED; urgency=low
   * Change keywork ds_graph_opts by ds_graph_options to be consistant with javascriptrrd and flot documentation
   * Fix Issue #6: a stranger rpimonitor.conf
 
- -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+ -- Xavier Berger <berger.xavier@gmail.com>   Mon Jul  8 23:32:44 CEST 2013
 
 rpimonitor (2.0-1) UNRELEASED; urgency=low
 
