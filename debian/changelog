@@ -1,3 +1,13 @@
+rpimonitor (2.3-1) UNRELEASED; urgency=low
+
+  * Add small improvement given by a feedback in RPi-Experiences blog
+  * Use javascript to resize correctly shellinabox iframe even in Firefox
+  * Fix issue #9: Wrong calculation of used memory
+  * Fix issue #11: adding friends link missing colon
+
+ -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+
+
 rpimonitor (2.2-1) UNRELEASED; urgency=low
 
   * Add the possibility to create multiple status and statistics pages
@@ -6,7 +16,7 @@ rpimonitor (2.2-1) UNRELEASED; urgency=low
   * bug fix: Embedded server won't start on 443 or 80 ports (issue #8)
   * bug fix: cleanup code according to comment described in issue #7 
 
- -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+ -- Xavier Berger <berger.xavier@gmail.com>  Fri Jul 19 11:25:34 CEST 2013
 
 rpimonitor (2.1-1) UNRELEASED; urgency=low
 
