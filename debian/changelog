@@ -1,3 +1,12 @@
+rpimonitor (2.4-1) UNRELEASED; urgency=low
+
+  * Change shared memory management to fix issue #12 and define the shmkey in configuration file
+  * Added the possibility to define the default timeline to be display in statistics page
+  * Add -s (show) option to show configuration as loaded (usefull for advanced customization) 
+  * Added WiFi icon
+
+ -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+
 rpimonitor (2.3-1) UNRELEASED; urgency=low
 
   * Add small improvement given by a feedback in RPi-Experiences blog
@@ -5,7 +14,7 @@ rpimonitor (2.3-1) UNRELEASED; urgency=low
   * Fix issue #9: Wrong calculation of used memory
   * Fix issue #11: adding friends link missing colon
 
- -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+ -- Xavier Berger <berger.xavier@gmail.com>  Sun Aug 18 14:15:19 CEST 2013
 
 
 rpimonitor (2.2-1) UNRELEASED; urgency=low
