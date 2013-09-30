@@ -1,11 +1,20 @@
 rpimonitor (2.4-1) UNRELEASED; urgency=low
 
+  * Fix issue #16: (v2.4) Network Graph displaying Bytes/s not in bits/s (wrong Legend)
+  * Update configuration to be compatible with NOOBS as proposed in issue #17
+
+ -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+
+
+rpimonitor (2.4-1) UNRELEASED; urgency=low
+
   * Change shared memory management to fix issue #12 and define the shmkey in configuration file
   * Added the possibility to define the default timeline to be display in statistics page
   * Add -s (show) option to show configuration as loaded (usefull for advanced customization) 
   * Added WiFi icon
 
- -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+ -- Xavier Berger <berger.xavier@gmail.com>  Sat Sep  7 10:41:30 CEST 2013
+ 
 
 rpimonitor (2.3-1) UNRELEASED; urgency=low
 
