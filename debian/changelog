@@ -1,4 +1,4 @@
-rpimonitor (2.4-1) UNRELEASED; urgency=low
+rpimonitor (2.5-1) UNRELEASED; urgency=low
 
   * Fix issue #16: (v2.4) Network Graph displaying Bytes/s not in bits/s (wrong Legend)
   * Update configuration to be compatible with NOOBS as proposed in issue #17
