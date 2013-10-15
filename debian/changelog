@@ -1,7 +1,11 @@
 rpimonitor (2.5-1) UNRELEASED; urgency=low
 
-  * Fix issue #16: (v2.4) Network Graph displaying Bytes/s not in bits/s (wrong Legend)
-  * Update configuration to be compatible with NOOBS as proposed in issue #17
+  * Fix issue #16: (v2.4) Network Graph displaying Bytes/s not in bits/s (wrong Legend) (From deMartin)
+  * Update configuration to be compatible with NOOBS as proposed in issue #17 (From deMartin)
+  * Implement modification for small screen proposed in issue #18 (From deMartin)
+  * Change footer to better fit with small screens
+  * Implement pull request #20: Counting buffers and cache as available memory (From Harbulot)
+  * Add the possibility to set Min and Max values for rrd graphs in configuration file (issue #19 #21)
 
  -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
 
