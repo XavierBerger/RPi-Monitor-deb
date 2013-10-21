@@ -1,14 +1,21 @@
+rpimonitor (2.5.1-1) UNRELEASED; urgency=low
+
+  * Update rrd graph with unkown data if fetched information is not a valid number
+  * Fix issue #22 : empty.rrd file not properly generated
+
+ -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+
+
 rpimonitor (2.5-1) UNRELEASED; urgency=low
 
-  * Fix issue #16: (v2.4) Network Graph displaying Bytes/s not in bits/s (wrong Legend) (From deMartin)
-  * Update configuration to be compatible with NOOBS as proposed in issue #17 (From deMartin)
-  * Implement modification for small screen proposed in issue #18 (From deMartin)
+  * Fix issue #16: (v2.4) Network Graph displaying Bytes/s not in bits/s (wrong Legend) (From deMattin)
+  * Update configuration to be compatible with NOOBS as proposed in issue #17 (From deMattin)
+  * Implement modification for small screen proposed in issue #18 (From deMattin)
   * Change footer to better fit with small screens
   * Implement pull request #20: Counting buffers and cache as available memory (From Harbulot)
   * Add the possibility to set Min and Max values for rrd graphs in configuration file (issue #19 #21)
 
- -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
-
+ -- Xavier Berger <berger.xavier@gmail.com>  Tue Oct 15 09:51:17 CEST 2013
 
 rpimonitor (2.4-1) UNRELEASED; urgency=low
 
