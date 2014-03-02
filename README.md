@@ -1,4 +1,4 @@
-# [**RPi-Monitor-deb**](http://rpi-experiences.blogspot.fr/)    [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=xberger&url=https://github.com/XavierBerger/RPi-Monitor/&title=https://github.com/XavierBerger/RPi-Monitor/&tags=github&category=software)
+# [**RPi-Monitor-deb**](http://rpi-experiences.blogspot.fr/)    [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=xberger&url=https://github.com/XavierBerger/RPi-Monitor-deb/&title=https://github.com/XavierBerger/RPi-Monitor-deb/&tags=github&category=software)
 
 **RPi-Monitor-deb** is the project packaging [**RPi-Monitor**](https://github.com/XavierBerger/RPi-Monitor) into a debian package. **RPi-Monitor** is a self monitoring application designed to run on [Raspberry Pi](http://www.raspberrypi.org/).
 
