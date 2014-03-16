@@ -1,9 +1,21 @@
+rpimonitor (2.6-1) UNRELEASED; urgency=low
+
+  * Add version.json, menu.json and friends.json generation to fix issue #25
+  * Check is file is executable (instead of existing) to define if it should be executed
+  * Generate empty.rrd at each request to fix issue #23
+  * Generate empty.rrd at each start workaround for issue #23 when using an external web server
+  * Improve shellinabox management: <IP>/shellinabox forwards to https://<IP>:4200
+  * Add RPi-Monitor Interactive Configuration Helper
+
+ -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+
+
 rpimonitor (2.5.1-1) UNRELEASED; urgency=low
 
   * Update rrd graph with unkown data if fetched information is not a valid number
   * Fix issue #22 : empty.rrd file not properly generated
 
- -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+ -- Xavier Berger <berger.xavier@gmail.com>  Mon Oct 21 11:18:42 CEST 2013
 
 
 rpimonitor (2.5-1) UNRELEASED; urgency=low
