@@ -65,3 +65,9 @@ find . -type f ! -regex '.*?DEBIAN.*' -printf '%P ' | xargs md5sum > DEBIAN/md5s
 sudo chown -R root:root etc usr
 cd ..
 dpkg -b ${DPKGSRC} packages/rpimonitor_${VERSION}-1_all.deb
+
+echo "Creating package for Raspbetty Store"
+cd store/rpimonitor
+ln ../../packages/rpimonitor_${VERSION}-1_all.deb rpimonitor_${VERSION}-1_all.deb
+cd ..
+zip rpimonitor_${VERSION}-1_all.zip rpimonitor/*
