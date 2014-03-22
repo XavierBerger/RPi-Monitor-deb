@@ -68,6 +68,7 @@ dpkg -b ${DPKGSRC} packages/rpimonitor_${VERSION}-1_all.deb
 
 echo "Creating package for Raspbetty Store"
 cd store/rpimonitor
+rm *.deb
 ln ../../packages/rpimonitor_${VERSION}-1_all.deb rpimonitor_${VERSION}-1_all.deb
 cd ..
 zip rpimonitor_${VERSION}-1_all.zip rpimonitor/*
