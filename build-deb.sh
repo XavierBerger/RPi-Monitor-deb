@@ -42,11 +42,13 @@ sed -i "s/{DATE}/$(LANG=EN; date)/" DEBIAN/changelog
 cp -a ${RPIMONITOR}/init etc
 mkdir -p usr/bin usr/share/rpimonitor/scripts etc/rpimonitord.conf.d
 cp ${RPIMONITOR}/rpimonitor/rpimonitord.conf etc
-cp ${RPIMONITOR}/rpimonitor/default.conf etc/rpimonitord.conf.d
+cp ${RPIMONITOR}/rpimonitor/raspbian.conf etc/rpimonitord.conf.d
+cp ${RPIMONITOR}/rpimonitor/xbian.conf etc/rpimonitord.conf.d
 cp ${RPIMONITOR}/rpimonitor/rpimonitord usr/bin
 cp -a ${RPIMONITOR}/rpimonitor/web/ usr/share/rpimonitor
 cp ${RPIMONITOR}/rpimonitor/updatestatus.txt usr/share/rpimonitor
 rm usr/share/rpimonitor/web/stat/*
+rm usr/share/rpimonitor/web/*.json
 
 echo "Post processing"
 sed -i "s/{DEVELOPMENT}/${VERSION}-1/" DEBIAN/control
@@ -56,7 +58,7 @@ sed -i "s/{DEVELOPMENT}/$VERSION/" usr/share/rpimonitor/web/js/rpimonitor.js
 mkdir -p usr/share/man/man1
 ../help2man.pl usr/bin/rpimonitord $VERSION | gzip -c > usr/share/man/man1/rpimonitord.1.gz
 mkdir -p usr/share/man/man5 
-cat ${RPIMONITOR}/rpimonitor/rpimonitord.conf ${RPIMONITOR}/rpimonitor/default.conf > rpimonitord.conf
+cat ${RPIMONITOR}/rpimonitor/rpimonitord.conf ${RPIMONITOR}/rpimonitor/raspbian.conf > rpimonitord.conf
 ../conf2man.pl rpimonitord.conf $VERSION | gzip -c > usr/share/man/man5/rpimonitord.conf.5.gz
 rm -f rpimonitord.conf
 

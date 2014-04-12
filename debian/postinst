@@ -1,4 +1,12 @@
 #!/bin/bash
+distrib=$(cat /etc/os-release | perl -ne '/^NAME="(\S+)/ and print lc($1)')
+if [[ -f /etc/rpimonitord.conf.d/$distrib.conf ]]; then
+  touch /etc/rpimonitord.conf.d/default.conf
+  rm /etc/rpimonitord.conf.d/default.conf 
+  ln -s /etc/rpimonitord.conf.d/${distrib}.conf /etc/rpimonitord.conf.d/default.conf
+else
+  ln -s /etc/rpimonitord.conf.d/raspbian.conf /etc/rpimonitord.conf.d/default.conf
+fi
 update-rc.d -f rpimonitor remove 
 update-rc.d -f rpimonitor defaults
 kill -9 $(ps -C rpimonitord -o pid= | perl -ne 'chomp and print "$_ "') > /dev/null 2>&1
