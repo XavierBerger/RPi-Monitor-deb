@@ -41,7 +41,7 @@ cp -a ../debian DEBIAN
 sed -i "s/{DATE}/$(LANG=EN; date)/" DEBIAN/changelog
 cp -a ${RPIMONITOR}/init etc
 mkdir -p usr/bin usr/share/rpimonitor/scripts etc/rpimonitor
-cp ${RPIMONITOR}/rpimonitor/rpimonitord.conf etc/rpimonitor
+cp ${RPIMONITOR}/rpimonitor/daemon.conf etc/rpimonitor
 cp ${RPIMONITOR}/rpimonitor/raspbian.conf etc/rpimonitor
 cp ${RPIMONITOR}/rpimonitor/xbian.conf etc/rpimonitor
 cp ${RPIMONITOR}/rpimonitor/rpimonitord usr/bin
@@ -58,8 +58,8 @@ sed -i "s/{DEVELOPMENT}/$VERSION/" usr/share/rpimonitor/web/js/rpimonitor.js
 mkdir -p usr/share/man/man1
 ../help2man.pl usr/bin/rpimonitord $VERSION | gzip -c > usr/share/man/man1/rpimonitord.1.gz
 mkdir -p usr/share/man/man5 
-cat ${RPIMONITOR}/rpimonitor/rpimonitord.conf ${RPIMONITOR}/rpimonitor/raspbian.conf > rpimonitord.conf
-../conf2man.pl rpimonitord.conf $VERSION | gzip -c > usr/share/man/man5/rpimonitord.conf.5.gz
+cat ${RPIMONITOR}/rpimonitor/daemon.conf ${RPIMONITOR}/rpimonitor/raspbian.conf > rpimonitord.conf
+../conf2man.pl daemon.conf $VERSION | gzip -c > usr/share/man/man5/rpimonitord.conf.5.gz
 rm -f rpimonitord.conf
 
 echo "Building package"
