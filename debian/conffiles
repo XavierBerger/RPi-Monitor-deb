@@ -1,2 +1,4 @@
-/etc/rpimonitord.conf
+/etc/rpimonitor/rpimonitord.conf
+/etc/rpimonitor/raspbian.conf
+/etc/rpimonitor/xbian.conf
 /etc/default/rpimonitor

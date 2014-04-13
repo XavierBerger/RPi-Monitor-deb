@@ -40,15 +40,15 @@ cd ${DPKGSRC}
 cp -a ../debian DEBIAN
 sed -i "s/{DATE}/$(LANG=EN; date)/" DEBIAN/changelog
 cp -a ${RPIMONITOR}/init etc
-mkdir -p usr/bin usr/share/rpimonitor/scripts etc/rpimonitord.conf.d
-cp ${RPIMONITOR}/rpimonitor/rpimonitord.conf etc
-cp ${RPIMONITOR}/rpimonitor/raspbian.conf etc/rpimonitord.conf.d
-cp ${RPIMONITOR}/rpimonitor/xbian.conf etc/rpimonitord.conf.d
+mkdir -p usr/bin usr/share/rpimonitor/scripts etc/rpimonitor
+cp ${RPIMONITOR}/rpimonitor/rpimonitord.conf etc/rpimonitor
+cp ${RPIMONITOR}/rpimonitor/raspbian.conf etc/rpimonitor
+cp ${RPIMONITOR}/rpimonitor/xbian.conf etc/rpimonitor
 cp ${RPIMONITOR}/rpimonitor/rpimonitord usr/bin
 cp -a ${RPIMONITOR}/rpimonitor/web/ usr/share/rpimonitor
 cp ${RPIMONITOR}/rpimonitor/updatestatus.txt usr/share/rpimonitor
-rm usr/share/rpimonitor/web/stat/*
-rm usr/share/rpimonitor/web/*.json
+rm usr/share/rpimonitor/web/stat/* > /dev/null 2>&1
+rm usr/share/rpimonitor/web/*.json > /dev/null 2>&1
 
 echo "Post processing"
 sed -i "s/{DEVELOPMENT}/${VERSION}-1/" DEBIAN/control
