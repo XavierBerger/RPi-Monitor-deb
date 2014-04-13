@@ -1,19 +1,19 @@
 #!/bin/bash
 # Stop current instance of rpimonitor
 kill -9 $(ps -C rpimonitord -o pid= | perl -ne 'chomp and print "$_ "') > /dev/null 2>&1
-# keep configuration in case of upgrade (for version 2.x < 2.7)
+# keep configuration in case of upgrade (for version 2.x < 2.7 on raspbian only)
 if [ -d /etc/rpimonitord.conf.d/ ]; then
   cp -a /etc/rpimonitord.conf.d/* /etc/rpimonitor/
-  mv /etc/rpimonitor/default.conf /etc/rpimonitor/raspbian.conf
-  mv -f /etc/rpimonitord.conf /etc/rpimonitor/
+  mv /etc/rpimonitor/default.conf /etc/rpimonitor/template/raspbian.conf
+  mv -f /etc/rpimonitord.conf /etc/rpimonitor/daemon.conf
   rm -fr /etc/rpimonitord.conf.d/ 
 fi
 # setup configuration base on target distribution
 distrib=$(cat /etc/os-release | perl -ne '/^NAME="(\S+)/ and print lc($1)')
-if [ -f /etc/rpimonitor/$distrib.conf ]; then
-  ln -s /etc/rpimonitor/${distrib}.conf /etc/rpimonitor/data.conf
+if [ -f /etc/rpimonitor/template/$distrib.conf ]; then
+  ln -s /etc/rpimonitor/template/${distrib}.conf /etc/rpimonitor/data.conf
 else
-  ln -s /etc/rpimonitor/raspbian.conf /etc/rpimonitor/data.conf
+  ln -s /etc/rpimonitor/template/raspbian.conf /etc/rpimonitor/data.conf
 fi
 # reinstall the service
 update-rc.d -f rpimonitor remove 

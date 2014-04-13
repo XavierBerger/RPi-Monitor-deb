@@ -42,8 +42,7 @@ sed -i "s/{DATE}/$(LANG=EN; date)/" DEBIAN/changelog
 cp -a ${RPIMONITOR}/init etc
 mkdir -p usr/bin usr/share/rpimonitor/scripts etc/rpimonitor
 cp ${RPIMONITOR}/rpimonitor/daemon.conf etc/rpimonitor
-cp ${RPIMONITOR}/rpimonitor/raspbian.conf etc/rpimonitor
-cp ${RPIMONITOR}/rpimonitor/xbian.conf etc/rpimonitor
+cp -a ${RPIMONITOR}/rpimonitor/template etc/rpimonitor/template
 cp ${RPIMONITOR}/rpimonitor/rpimonitord usr/bin
 cp -a ${RPIMONITOR}/rpimonitor/web/ usr/share/rpimonitor
 cp ${RPIMONITOR}/rpimonitor/updatestatus.txt usr/share/rpimonitor
@@ -58,7 +57,7 @@ sed -i "s/{DEVELOPMENT}/$VERSION/" usr/share/rpimonitor/web/js/rpimonitor.js
 mkdir -p usr/share/man/man1
 ../help2man.pl usr/bin/rpimonitord $VERSION | gzip -c > usr/share/man/man1/rpimonitord.1.gz
 mkdir -p usr/share/man/man5 
-cat ${RPIMONITOR}/rpimonitor/daemon.conf ${RPIMONITOR}/rpimonitor/raspbian.conf > rpimonitord.conf
+cat ${RPIMONITOR}/rpimonitor/daemon.conf ${RPIMONITOR}/rpimonitor/template/raspbian.conf > rpimonitord.conf
 ../conf2man.pl daemon.conf $VERSION | gzip -c > usr/share/man/man5/rpimonitord.conf.5.gz
 rm -f rpimonitord.conf
 
