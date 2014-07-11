@@ -1,3 +1,16 @@
+rpimonitor (2.7-1) UNRELEASED; urgency=low
+
+  * Change directory storing configuration to /etc/rpimonitor/
+  * Change configuration file name to better names
+  * Create a template directory for configuration files
+  * Add xbian support and distribution automatic detection in debian package.
+  * Cleanup shellinabox menu display and configuration
+  * Change ownership of empty.rrd to activate on demand regeneration Fixing issue #23
+  * Update raspbian.conf to make it compatible with NOOBS installation
+
+ -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+
+
 rpimonitor (2.6-1) UNRELEASED; urgency=low
 
   * Add version.json, menu.json and friends.json generation to fix issue #25
@@ -7,7 +20,7 @@ rpimonitor (2.6-1) UNRELEASED; urgency=low
   * Improve shellinabox management: <IP>/shellinabox forwards to https://<IP>:4200
   * Add RPi-Monitor Interactive Configuration Helper
 
- -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+ -- Xavier Berger <berger.xavier@gmail.com>  Sun Mar 16 14:52:34 CET 2014
 
 
 rpimonitor (2.5.1-1) UNRELEASED; urgency=low
