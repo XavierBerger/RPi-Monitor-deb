@@ -58,7 +58,7 @@ mkdir -p usr/share/man/man1
 ../help2man.pl usr/bin/rpimonitord $VERSION | gzip -c > usr/share/man/man1/rpimonitord.1.gz
 mkdir -p usr/share/man/man5 
 cat ${RPIMONITOR}/rpimonitor/daemon.conf ${RPIMONITOR}/rpimonitor/template/raspbian.conf > rpimonitord.conf
-../conf2man.pl daemon.conf $VERSION | gzip -c > usr/share/man/man5/rpimonitord.conf.5.gz
+../conf2man.pl rpimonitord.conf $VERSION | gzip -c > usr/share/man/man5/rpimonitord.conf.5.gz
 rm -f rpimonitord.conf
 
 echo "Building package"
