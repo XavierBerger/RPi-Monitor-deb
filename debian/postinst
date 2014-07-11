@@ -10,6 +10,8 @@ if [ -d /etc/rpimonitord.conf.d/ ]; then
 fi
 # setup configuration base on target distribution
 distrib=$(cat /etc/os-release | perl -ne '/^NAME="(\S+)/ and print lc($1)')
+touch  /etc/rpimonitor/data.conf
+rm  /etc/rpimonitor/data.conf
 if [ -f /etc/rpimonitor/template/$distrib.conf ]; then
   ln -s /etc/rpimonitor/template/${distrib}.conf /etc/rpimonitor/data.conf
 else
