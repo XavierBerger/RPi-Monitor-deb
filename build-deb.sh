@@ -73,3 +73,10 @@ rm *.deb
 ln ../../packages/rpimonitor_${VERSION}-1_all.deb rpimonitor_${VERSION}-1_all.deb
 cd ..
 zip rpimonitor_${VERSION}-1_all.zip rpimonitor/*
+
+cd ..
+echo
+echo -ne "Install RPi-Monitor $VERSION now? (Ctl+C to cancel)"
+read continue
+echo
+sudo dpkg -i packages/rpimonitor_${VERSION}-1_all.deb
