@@ -8,9 +8,9 @@ rpimonitor (2.7-1) UNRELEASED; urgency=low
   * Cleanup shellinabox menu display and configuration
   * Change ownership of empty.rrd to activate on demand regeneration Fixing issue #23
   * Update raspbian.conf to make it compatible with NOOBS installation
-  * Add 'Label' funtion for status page
   * Update jquery (v2.1.1) and bootstrap (v2.3.2)
   * Update disk usage formula for better compatibility
+  * Add 'Label' function for status page
 
  -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
 

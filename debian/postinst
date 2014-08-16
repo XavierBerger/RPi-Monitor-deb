@@ -5,6 +5,7 @@ kill -9 $(ps -C rpimonitord -o pid= | perl -ne 'chomp and print "$_ "') > /dev/n
 if [ -d /etc/rpimonitord.conf.d/ ]; then
   cp -a /etc/rpimonitord.conf.d/* /etc/rpimonitor/
   mv /etc/rpimonitor/default.conf /etc/rpimonitor/template/raspbian.conf
+  sed -i "/\/usr\/share\/rpimonitor\/updatestatus.txt/\/var\/lib\/rpimonitor\/updatestatus.txt/"
   mv -f /etc/rpimonitord.conf /etc/rpimonitor/daemon.conf
   rm -fr /etc/rpimonitord.conf.d/
 fi
