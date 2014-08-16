@@ -6,7 +6,13 @@ if [ -d /etc/rpimonitord.conf.d/ ]; then
   cp -a /etc/rpimonitord.conf.d/* /etc/rpimonitor/
   mv /etc/rpimonitor/default.conf /etc/rpimonitor/template/raspbian.conf
   mv -f /etc/rpimonitord.conf /etc/rpimonitor/daemon.conf
-  rm -fr /etc/rpimonitord.conf.d/ 
+  rm -fr /etc/rpimonitord.conf.d/
+fi
+# keep graph history in case of upgrade (for version 2.x < 2.7 on raspbian only)
+if [ -d /usr/share/rpimonitor/web/stat/ ]; then
+  mkdir -p /usr/lib/rpimonitor
+  mv /usr/share/rpimonitor/web/updatestatus.txt /var/lib/rpimonitor/
+  mv /usr/share/rpimonitor/web/stat/ /var/lib/rpimonitor/
 fi
 # setup configuration base on target distribution
 distrib=$(cat /etc/os-release | perl -ne '/^NAME="(\S+)/ and print lc($1)')
@@ -18,7 +24,7 @@ else
   ln -s /etc/rpimonitor/template/raspbian.conf /etc/rpimonitor/data.conf
 fi
 # reinstall the service
-update-rc.d -f rpimonitor remove 
+update-rc.d -f rpimonitor remove
 update-rc.d -f rpimonitor defaults
 # start RPi-Monitor
 /etc/init.d/rpimonitor start

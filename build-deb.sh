@@ -40,12 +40,12 @@ cd ${DPKGSRC}
 cp -a ../debian DEBIAN
 sed -i "s/{DATE}/$(LANG=EN; date)/" DEBIAN/changelog
 cp -a ${RPIMONITOR}/init etc
-mkdir -p usr/bin usr/share/rpimonitor/scripts etc/rpimonitor
+mkdir -p usr/bin usr/share/rpimonitor/scripts etc/rpimonitor var/lib/rpimonitor
 cp ${RPIMONITOR}/rpimonitor/daemon.conf etc/rpimonitor
 cp -a ${RPIMONITOR}/rpimonitor/template etc/rpimonitor/template
 cp ${RPIMONITOR}/rpimonitor/rpimonitord usr/bin
 cp -a ${RPIMONITOR}/rpimonitor/web/ usr/share/rpimonitor
-cp ${RPIMONITOR}/rpimonitor/updatestatus.txt usr/share/rpimonitor
+cp ${RPIMONITOR}/rpimonitor/updatestatus.txt var/lib/rpimonitor
 rm usr/share/rpimonitor/web/stat/* > /dev/null 2>&1
 rm usr/share/rpimonitor/web/*.json > /dev/null 2>&1
 
@@ -56,7 +56,7 @@ sed -i "s/{DEVELOPMENT}/$VERSION/" usr/share/rpimonitor/web/js/rpimonitor.js
 
 mkdir -p usr/share/man/man1
 ../help2man.pl usr/bin/rpimonitord $VERSION | gzip -c > usr/share/man/man1/rpimonitord.1.gz
-mkdir -p usr/share/man/man5 
+mkdir -p usr/share/man/man5
 cat ${RPIMONITOR}/rpimonitor/daemon.conf ${RPIMONITOR}/rpimonitor/template/raspbian.conf > rpimonitord.conf
 ../conf2man.pl rpimonitord.conf $VERSION | gzip -c > usr/share/man/man5/rpimonitord.conf.5.gz
 rm -f rpimonitord.conf
@@ -67,7 +67,7 @@ sudo chown -R root:root etc usr
 cd ..
 dpkg -b ${DPKGSRC} packages/rpimonitor_${VERSION}-1_all.deb
 
-echo "Creating package for Raspbetty Store"
+echo "Creating package for Raspberry Pi Store"
 cd store/rpimonitor
 rm *.deb
 ln ../../packages/rpimonitor_${VERSION}-1_all.deb rpimonitor_${VERSION}-1_all.deb
