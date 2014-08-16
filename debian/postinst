@@ -5,14 +5,13 @@ kill -9 $(ps -C rpimonitord -o pid= | perl -ne 'chomp and print "$_ "') > /dev/n
 if [ -d /etc/rpimonitord.conf.d/ ]; then
   cp -a /etc/rpimonitord.conf.d/* /etc/rpimonitor/
   mv /etc/rpimonitor/default.conf /etc/rpimonitor/template/raspbian.conf
-  sed -i "/\/usr\/share\/rpimonitor\/updatestatus.txt/\/var\/lib\/rpimonitor\/updatestatus.txt/"
+  sed -i "/\/usr\/share\/rpimonitor\/updatestatus.txt/\/var\/lib\/rpimonitor\/updatestatus.txt/" /etc/rpimonitor/template/raspbian.conf
   mv -f /etc/rpimonitord.conf /etc/rpimonitor/daemon.conf
   rm -fr /etc/rpimonitord.conf.d/
 fi
 # keep graph history in case of upgrade (for version 2.x < 2.7 on raspbian only)
 if [ -d /usr/share/rpimonitor/web/stat/ ]; then
   mkdir -p /usr/lib/rpimonitor
-  mv /usr/share/rpimonitor/web/updatestatus.txt /var/lib/rpimonitor/
   mv /usr/share/rpimonitor/web/stat/ /var/lib/rpimonitor/
 fi
 # setup configuration base on target distribution
