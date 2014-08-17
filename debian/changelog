@@ -1,5 +1,11 @@
 rpimonitor (2.7-1) UNRELEASED; urgency=low
 
+  * Add 'Badge' function for status page (similar to Label) 
+
+ -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+
+rpimonitor (2.7-1) UNRELEASED; urgency=low
+
   * Change directory storing configuration to /etc/rpimonitor/
   * Change configuration file name to better names
   * Create a template directory for configuration files
@@ -12,7 +18,7 @@ rpimonitor (2.7-1) UNRELEASED; urgency=low
   * Update disk usage formula for better compatibility
   * Add 'Label' function for status page
 
- -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+ -- Xavier Berger <berger.xavier@gmail.com>  Sat Aug 16 18:54:32 CEST 2014
 
 
 rpimonitor (2.6-1) UNRELEASED; urgency=low
