@@ -40,11 +40,12 @@ cd ${DPKGSRC}
 cp -a ../debian DEBIAN
 sed -i "s/{DATE}/$(LANG=EN; date)/" DEBIAN/changelog
 cp -a ${RPIMONITOR}/init etc
-mkdir -p usr/bin usr/share/rpimonitor/scripts etc/rpimonitor var/lib/rpimonitor
+mkdir -p usr/bin etc/rpimonitor var/lib/rpimonitor
 cp ${RPIMONITOR}/rpimonitor/daemon.conf etc/rpimonitor
 cp -a ${RPIMONITOR}/rpimonitor/template etc/rpimonitor/template
 cp ${RPIMONITOR}/rpimonitor/rpimonitord usr/bin
 cp -a ${RPIMONITOR}/rpimonitor/web/ usr/share/rpimonitor
+cp -a ${RPIMONITOR}/rpimonitor/scripts/ usr/share/rpimonitor
 cp ${RPIMONITOR}/rpimonitor/updatestatus.txt var/lib/rpimonitor
 rm usr/share/rpimonitor/web/stat/* > /dev/null 2>&1
 rm usr/share/rpimonitor/web/*.json > /dev/null 2>&1

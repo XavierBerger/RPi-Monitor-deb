@@ -1,6 +1,7 @@
 rpimonitor (2.7-1) UNRELEASED; urgency=low
 
   * Add 'Badge' function for status page (similar to Label) 
+  * Simplify and fix startup scripts
 
  -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
 
