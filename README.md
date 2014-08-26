@@ -22,6 +22,17 @@ Build package:
 
     cd RPi-Monitor-deb
     ./build-deb.sh
+   
+## Repository
+
+Build script also create an update a debian repository.
+To use this repository can be used by adding the following line in /etc/apt/source.list
+
+    # RPi-Monitor official repository
+    deb https://github.com XavierBerger/RPi-Monitor-deb/raw/devel/repo/
+
+Note: The packae is not signed, it will be require to accept installation of 
+unauthenticated package.
     
 ## Authors
 
