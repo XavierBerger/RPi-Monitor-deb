@@ -5,6 +5,7 @@ rpimonitor (2.8-1) UNRELEASED; urgency=low
   * Manage configuration indexes unicity per file (to make configuration easier)
   * Change ownership of cron script to avoid issue with logs
   * Add parameters to customise menu logo, title and page titles
+  * Add debian repository using github as repo
 
  -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
 
