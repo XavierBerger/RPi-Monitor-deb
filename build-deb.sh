@@ -29,13 +29,16 @@ fi
 
 vi debian/changelog
 
-echo "Removing old ${DPKGSRC} directory"
+echo
+echo -e "\033[1mRemoving old ${DPKGSRC} directory\033[0m"
 sudo rm -fr ${DPKGSRC}
 
-echo "Creating a new ${DPKGSRC} directory"
+echo
+echo -e "\033[1mCreating a new ${DPKGSRC} directory\033[0m"
 mkdir ${DPKGSRC}
 
-echo "Constructing debian package structure"
+echo
+echo -e "\033[1mConstructing debian package structure\033[0m"
 cd ${DPKGSRC}
 cp -a ../debian DEBIAN
 sed -i "s/{DATE}/$(LANG=EN; date)/" DEBIAN/changelog
@@ -50,7 +53,8 @@ cp ${RPIMONITOR}/rpimonitor/updatestatus.txt var/lib/rpimonitor
 rm usr/share/rpimonitor/web/stat/* > /dev/null 2>&1
 rm usr/share/rpimonitor/web/*.json > /dev/null 2>&1
 
-echo "Post processing"
+echo
+echo -e "\033[1mPost processing\033[0m"
 sed -i "s/{DEVELOPMENT}/${VERSION}-1/" DEBIAN/control
 sed -i "s/{DEVELOPMENT}/$VERSION/" usr/bin/rpimonitord
 sed -i "s/{DEVELOPMENT}/$VERSION/" usr/share/rpimonitor/web/js/rpimonitor.js
@@ -62,13 +66,23 @@ cat ${RPIMONITOR}/rpimonitor/daemon.conf ${RPIMONITOR}/rpimonitor/template/raspb
 ../conf2man.pl rpimonitord.conf $VERSION | gzip -c > usr/share/man/man5/rpimonitord.conf.5.gz
 rm -f rpimonitord.conf
 
-echo "Building package"
+echo
+echo -e "\033[1mBuilding package\033[0m"
 find . -type f ! -regex '.*?DEBIAN.*' -printf '%P ' | xargs md5sum > DEBIAN/md5sums
 sudo chown -R root:root etc usr
 cd ..
 dpkg -b ${DPKGSRC} packages/rpimonitor_${VERSION}-1_all.deb
 
-echo "Creating package for Raspberry Pi Store"
+echo
+echo -e "\033[1mUpdating repository\033[0m"
+cd repo
+rm *.deb
+ln ../packages/rpimonitor_${VERSION}-1_all.deb rpimonitor_${VERSION}-1_all.deb
+cd ..
+dpkg-scanpackages repo /dev/null  | gzip -9c > repo/Packages.gz
+
+echo
+echo -e "\033[1mCreating package for Raspberry Pi Store\033[0m"
 cd store/rpimonitor
 rm *.deb
 ln ../../packages/rpimonitor_${VERSION}-1_all.deb rpimonitor_${VERSION}-1_all.deb
@@ -77,7 +91,6 @@ zip rpimonitor_${VERSION}-1_all.zip rpimonitor/*
 
 cd ..
 echo
-echo -ne "Install RPi-Monitor $VERSION now? (Ctl+C to cancel)"
+echo -ne "\033[1mInstall RPi-Monitor $VERSION now? (Ctl+C to cancel)\033[0m"
 read continue
-echo
 sudo dpkg -i packages/rpimonitor_${VERSION}-1_all.deb
