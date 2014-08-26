@@ -25,13 +25,24 @@ Build package:
    
 ## Repository
 
-Build script also create an update a debian repository.
-To use this repository can be used by adding the following line in /etc/apt/source.list
+Build script also create a debian repository.
+This repository can be used by adding the following line in /etc/apt/source.list
 
     # RPi-Monitor official repository
     deb https://github.com XavierBerger/RPi-Monitor-deb/raw/devel/repo/
 
-Note: The packae is not signed, it will be require to accept installation of 
+The following command will then work:
+
+For installation
+  
+    sudo apt-get install rpimonitor
+
+For update
+  
+    sudo apt-get update
+    sudo apt-get pgrade
+
+Note: The package is not signed, it will be require to accept installation of 
 unauthenticated package.
     
 ## Authors
