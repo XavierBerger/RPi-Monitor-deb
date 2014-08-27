@@ -40,7 +40,7 @@ For installation
 For update
   
     sudo apt-get update
-    sudo apt-get pgrade
+    sudo apt-get upgrade
 
 Note: The package is not signed, it will be require to accept installation of 
 unauthenticated package.
