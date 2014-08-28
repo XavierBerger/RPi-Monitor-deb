@@ -26,12 +26,17 @@ Build package:
 ## Repository
 
 Build script also create a debian repository.
-This repository can be used by adding the following line in /etc/apt/source.list
+
+This repository can be used by adding the following lines in /etc/apt/source.list
 
     # RPi-Monitor official repository
     deb https://github.com XavierBerger/RPi-Monitor-deb/raw/devel/repo/
 
 The following command will then work:
+
+To activate https transport for apt:
+    
+    sudo apt-get install apt-transport-https
 
 For installation
   
@@ -42,8 +47,8 @@ For update
     sudo apt-get update
     sudo apt-get upgrade
 
-Note: The package is not signed, it will be require to accept installation of 
-unauthenticated package.
+**Note**: *The package is not signed, it will be require to accept installation of 
+unauthenticated package*.
     
 ## Authors
 
