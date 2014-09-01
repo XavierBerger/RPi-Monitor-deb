@@ -52,12 +52,12 @@ cp -a ${RPIMONITOR}/scripts/ usr/share/rpimonitor
 cp ${RPIMONITOR}/rpimonitor/updatestatus.txt var/lib/rpimonitor
 rm usr/share/rpimonitor/web/stat/* > /dev/null 2>&1
 rm usr/share/rpimonitor/web/*.json > /dev/null 2>&1
-
 echo
 echo -e "\033[1mPost processing\033[0m"
 sed -i "s/{DEVELOPMENT}/${VERSION}-1/" DEBIAN/control
 sed -i "s/{DEVELOPMENT}/$VERSION/" usr/bin/rpimonitord
 sed -i "s/{DEVELOPMENT}/$VERSION/" usr/share/rpimonitor/web/js/rpimonitor.js
+find etc/rpimonitor/ -type f | sed  's/etc/\/etc/' > DEBIAN/conffiles
 
 mkdir -p usr/share/man/man1
 ../help2man.pl usr/bin/rpimonitord $VERSION | gzip -c > usr/share/man/man1/rpimonitord.1.gz

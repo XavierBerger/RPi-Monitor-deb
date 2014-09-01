@@ -30,7 +30,7 @@ Build script also create a debian repository.
 This repository can be used by adding the following lines in /etc/apt/source.list
 
     # RPi-Monitor official repository
-    deb https://github.com XavierBerger/RPi-Monitor-deb/raw/devel/repo/
+    deb https://github.com XavierBerger/RPi-Monitor-deb/raw/master/repo/
 
 The following command will then work:
 

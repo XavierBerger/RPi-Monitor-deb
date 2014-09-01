@@ -3,8 +3,10 @@ rpimonitor (2.8-1) UNRELEASED; urgency=low
   * Add 'Badge' function for status page (similar to Label) 
   * Simplify and fix startup scripts
   * Manage configuration indexes unicity per file (to make configuration easier)
+  * Add 'include' function to load configuration additionnal files
+  * Split configuration files and use 'include' in default configuration file
   * Change ownership of cron script to avoid issue with logs
-  * Add parameters to customise menu logo, title and page titles
+  * Add parameters to customise menu logo, title and page title
   * Add debian repository using github as repo
 
  -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
