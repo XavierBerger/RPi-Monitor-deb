@@ -25,22 +25,22 @@ Build package:
    
 ## Repository
 
-Build script also create a debian repository.
+Build script also create a debian repository. To use this repository follow the instruction bellow:
 
-This repository can be used by adding the following lines in /etc/apt/source.list
+Activate https transport for apt:
+    
+    sudo apt-get install apt-transport-https ca-certificates
+
+Add the following lines in `/etc/apt/source.list`
 
     # RPi-Monitor official repository
     deb https://github.com XavierBerger/RPi-Monitor-deb/raw/master/repo/
 
-The following command will then work:
+**Note**: To test unstable version, replace *master* by *devel* into the upper line.
 
-To activate https transport for apt:
-    
-    sudo apt-get install apt-transport-https ca-certificates
+Install **RPi-Monitor**
 
-For installation
     sudo apt-get update
-    sudo apt-get upgrade
     sudo apt-get install rpimonitor
 
 For update (when a new release of RPi-Monitor is available)
@@ -50,6 +50,7 @@ For update (when a new release of RPi-Monitor is available)
 
 **Note**: *The package is not signed, it will be require to accept installation of 
 unauthenticated package*.
+
     
 ## Authors
 

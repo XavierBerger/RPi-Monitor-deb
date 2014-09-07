@@ -1,5 +1,5 @@
 #!/bin/bash
-# (c) 2013 - Xavier Berger - http://rpi-experiences.blogspot.fr/
+# (c) 2013-2014 - Xavier Berger - http://rpi-experiences.blogspot.fr/
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -79,12 +79,12 @@ cd repo
 rm *.deb
 ln ../packages/rpimonitor_${VERSION}-1_all.deb rpimonitor_${VERSION}-1_all.deb
 cd ..
-mkdir -p XavierBerger/RPi-Monitor-deb/raw/devel/
-cd XavierBerger/RPi-Monitor-deb/raw/devel/
-ln -s ../../../../repo repo
-cd ../../../..
-#dpkg-scanpackages repo /dev/null XavierBerger/RPi-Monitor-deb/raw/devel/ | gzip -9c > repo/Packages.gz
-dpkg-scanpackages XavierBerger/RPi-Monitor-deb/raw/devel/repo /dev/null | gzip -9c > repo/Packages.gz
+#mkdir -p XavierBerger/RPi-Monitor-deb/raw/devel/
+#cd XavierBerger/RPi-Monitor-deb/raw/devel/
+#ln -s ../../../../repo repo
+#cd ../../../..
+#dpkg-scanpackages XavierBerger/RPi-Monitor-deb/raw/devel/repo /dev/null | gzip -9c > repo/Packages.gz
+dpkg-scanpackages repo /dev/null XavierBerger/RPi-Monitor-deb/raw/devel/ | gzip -9c > repo/Packages.gz
 
 echo
 echo -e "\033[1mCreating package for Raspberry Pi Store\033[0m"
