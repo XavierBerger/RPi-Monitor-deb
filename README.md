@@ -36,13 +36,14 @@ The following command will then work:
 
 To activate https transport for apt:
     
-    sudo apt-get install apt-transport-https
+    sudo apt-get install apt-transport-https ca-certificates
 
 For installation
-  
+    sudo apt-get update
+    sudo apt-get upgrade
     sudo apt-get install rpimonitor
 
-For update
+For update (when a new release of RPi-Monitor is available)
   
     sudo apt-get update
     sudo apt-get upgrade
