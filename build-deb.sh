@@ -83,7 +83,8 @@ mkdir -p XavierBerger/RPi-Monitor-deb/raw/devel/
 cd XavierBerger/RPi-Monitor-deb/raw/devel/
 ln -s ../../../../repo repo
 cd ../../../..
-dpkg-scanpackages XavierBerger/RPi-Monitor-deb/raw/devel/repo /dev/null  | gzip -9c > repo/Packages.gz
+#dpkg-scanpackages repo /dev/null XavierBerger/RPi-Monitor-deb/raw/devel/ | gzip -9c > repo/Packages.gz
+dpkg-scanpackages XavierBerger/RPi-Monitor-deb/raw/devel/repo /dev/null | gzip -9c > repo/Packages.gz
 
 echo
 echo -e "\033[1mCreating package for Raspberry Pi Store\033[0m"
