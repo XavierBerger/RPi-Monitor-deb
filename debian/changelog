@@ -9,6 +9,7 @@ rpimonitor (2.8-1) UNRELEASED; urgency=low
   * Add parameters to customise menu logo, title and page title
   * Add debian repository using github as repo
   * Check if localStorage is activated and warn user is not
+  * Improve upgradable packages detection (using aptitude)
 
  -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
 
