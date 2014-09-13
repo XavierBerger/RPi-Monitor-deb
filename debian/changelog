@@ -1,3 +1,7 @@
+rpimonitor (2.9-1) UNRELEASED; urgency=low
+  * 
+ -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+
 rpimonitor (2.8-1) UNRELEASED; urgency=low
 
   * Add 'Badge' function for status page (similar to Label) 
@@ -12,7 +16,7 @@ rpimonitor (2.8-1) UNRELEASED; urgency=low
   * Improve upgradable packages detection using aptitude for debian or pacman
     for archLinux (Thanks ajs124 for archLinux implementation)
 
- -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+ -- Xavier Berger <berger.xavier@gmail.com>  Sat Sep 13 09:50:32 CEST 2014
 
 rpimonitor (2.7-1) UNRELEASED; urgency=low
 
