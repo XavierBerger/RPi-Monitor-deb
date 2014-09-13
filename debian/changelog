@@ -9,7 +9,8 @@ rpimonitor (2.8-1) UNRELEASED; urgency=low
   * Add parameters to customise menu logo, title and page title
   * Add debian repository using github as repo
   * Check if localStorage is activated and warn user is not
-  * Improve upgradable packages detection (using aptitude)
+  * Improve upgradable packages detection using aptitude for debian or pacman
+    for archLinux (Thanks ajs124 for archLinux implementation)
 
  -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
 

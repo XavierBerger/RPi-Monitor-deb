@@ -31,7 +31,11 @@ Activate https transport for apt:
     
     sudo apt-get install apt-transport-https ca-certificates
 
-Add the following lines in `/etc/apt/source.list`
+Execute the following command to add rpimonitor into your list of repository:
+
+    sudo wget https://raw.githubusercontent.com/XavierBerger/RPi-Monitor/master/init/sources.list.d/rpimonitor.list -O /etc/apt/sources.list.d/rpimonitor.list
+
+This will add the file `/etc/apt/source.list.d/rpimonitor.list` containing:
 
     # RPi-Monitor official repository
     deb https://github.com XavierBerger/RPi-Monitor-deb/raw/master/repo/
