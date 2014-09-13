@@ -23,6 +23,8 @@ if [ -f /etc/rpimonitor/template/$distrib.conf ]; then
 else
   ln -s /etc/rpimonitor/template/raspbian.conf /etc/rpimonitor/data.conf
 fi
+#Change cron right
+chmod 600 /etc/cron.d/rpimonitor
 # reinstall the service
 update-rc.d -f rpimonitor remove
 update-rc.d -f rpimonitor defaults
