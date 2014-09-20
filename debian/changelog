@@ -1,5 +1,9 @@
 rpimonitor (2.9-1) UNRELEASED; urgency=low
-  * 
+
+  * Migrate style to bootstrap 3 
+  * Add color into progressbar orange for warning and red for danger
+  * Move qrcode to about menu (link is related to the page display)
+
  -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
 
 rpimonitor (2.8-1) UNRELEASED; urgency=low
