@@ -73,18 +73,14 @@ sudo chown -R root:root etc usr
 cd ..
 dpkg -b ${DPKGSRC} packages/rpimonitor_${VERSION}-1_all.deb
 
+branch=$(git branch | perl -ne '/^\* (.*)/ and print "$1"')
 echo
-echo -e "\033[1mUpdating repository\033[0m"
+echo -e "\033[1mUpdating repository for branch \033[31m\033[1m${branch}\033[0m:\033[0m"
 cd repo
 rm *.deb
 ln ../packages/rpimonitor_${VERSION}-1_all.deb rpimonitor_${VERSION}-1_all.deb
 cd ..
-#mkdir -p XavierBerger/RPi-Monitor-deb/raw/devel/
-#cd XavierBerger/RPi-Monitor-deb/raw/devel/
-#ln -s ../../../../repo repo
-#cd ../../../..
-#dpkg-scanpackages XavierBerger/RPi-Monitor-deb/raw/devel/repo /dev/null | gzip -9c > repo/Packages.gz
-dpkg-scanpackages repo /dev/null XavierBerger/RPi-Monitor-deb/raw/devel/ | gzip -9c > repo/Packages.gz
+dpkg-scanpackages repo /dev/null XavierBerger/RPi-Monitor-deb/raw/${branch}/ | gzip -9c > repo/Packages.gz
 
 echo
 echo -e "\033[1mCreating package for Raspberry Pi Store\033[0m"
