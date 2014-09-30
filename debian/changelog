@@ -5,6 +5,7 @@ rpimonitor (2.9-1) UNRELEASED; urgency=low
   * Move qrcode to about menu (link is related to the page display)
   * Add justgage generating colored gauges
   * Add visibility parameter defining if a row of status page should be shown 
+  * Add example configuration files showing rpimonitor rendering features 
 
  -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
 
