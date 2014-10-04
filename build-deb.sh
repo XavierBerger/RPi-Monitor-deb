@@ -43,6 +43,7 @@ cd ${DPKGSRC}
 cp -a ../debian DEBIAN
 sed -i "s/{DATE}/$(LANG=EN; date)/" DEBIAN/changelog
 cp -a ${RPIMONITOR}/init etc
+rm etc/apt/sources.list.d/rpimonitor.list
 mkdir -p usr/bin etc/rpimonitor usr/share/rpimonitor var/lib/rpimonitor
 cp ${RPIMONITOR}/rpimonitor/daemon.conf etc/rpimonitor
 cp -a ${RPIMONITOR}/rpimonitor/template etc/rpimonitor/template
@@ -77,10 +78,16 @@ branch=$(git branch | perl -ne '/^\* (.*)/ and print "$1"')
 echo
 echo -e "\033[1mUpdating repository for branch \033[31m\033[1m${branch}\033[0m:\033[0m"
 cd repo
-rm *.deb
+sed -i "s/{BRANCH}/${branch}/" apt-release.conf
+rm *.deb Packages.gz
 ln ../packages/rpimonitor_${VERSION}-1_all.deb rpimonitor_${VERSION}-1_all.deb
 cd ..
-dpkg-scanpackages repo /dev/null XavierBerger/RPi-Monitor-deb/raw/${branch}/ | gzip -9c > repo/Packages.gz
+dpkg-scanpackages repo /dev/null XavierBerger/RPi-Monitor-deb/raw/${branch}/ > repo/Packages
+gzip -k repo/Packages
+
+apt-ftparchive -c=repo/apt-release.conf release repo > repo/Release
+rm repo/Release.gpg
+gpg --armor --detach-sign --sign --output repo/Release.gpg repo/Release
 
 echo
 echo -e "\033[1mCreating package for Raspberry Pi Store\033[0m"

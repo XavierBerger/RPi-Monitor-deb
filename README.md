@@ -31,6 +31,10 @@ Activate https transport for apt:
     
     sudo apt-get install apt-transport-https ca-certificates
 
+Add my public key to the trusted key list for apt:
+
+    wget http://127.0.0.1:8000/XavierBerger/RPi-Monitor-deb/raw/devel/repo/XavierBerger.gpg.pub -O - | sudo apt-key add -
+
 Execute the following command to add rpimonitor into your list of repository:
 
     sudo wget https://raw.githubusercontent.com/XavierBerger/RPi-Monitor/master/init/apt/sources.list.d/rpimonitor.list -O /etc/apt/sources.list.d/rpimonitor.list
@@ -52,10 +56,7 @@ For update (when a new release of RPi-Monitor is available)
     sudo apt-get update
     sudo apt-get upgrade
 
-**Note**: *The package is not signed, it will be require to accept installation of 
-unauthenticated package*.
 
-    
 ## Authors
 
 **Xavier Berger**

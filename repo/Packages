@@ -1,0 +1,13 @@
+Package: rpimonitor
+Version: 2.9-1
+Architecture: all
+Maintainer: Xavier Berger <berger.xavier@gmail.com>
+Depends: perl, librrds-perl, libhttp-daemon-perl (>= 6.0.0) | libwww-perl (<< 6.0.0), libjson-perl, libipc-sharelite-perl, libfile-which-perl, aptitude
+Filename: XavierBerger/RPi-Monitor-deb/raw/devel/repo/rpimonitor_2.9-1_all.deb
+Size: 447158
+MD5sum: e6703c52a2f47ccf859ac8b6334eb4aa
+SHA1: f194673b309293838f1a8de42daedff287d6a0d0
+SHA256: 0bbaa3d9891ea24e440104add94e40c6316025d512f2c82811a9d938de2182c7
+Section: misc
+Description: RPi-Monitor is a self monitoring application designed to run on Raspberry Pi.
+

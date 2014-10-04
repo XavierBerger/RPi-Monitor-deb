@@ -1,11 +1,12 @@
 rpimonitor (2.9-1) UNRELEASED; urgency=low
 
-  * Migrate style to bootstrap 3 
+  * Migrate style to bootstrap 3.2.0 
   * Add color into progressbar orange for warning and red for danger
   * Move qrcode to about menu (link is related to the page display)
   * Add justgage generating colored gauges
   * Add visibility parameter defining if a row of status page should be shown 
-  * Add example configuration files showing rpimonitor rendering features 
+  * Add example configuration files showing rpimonitor rendering features
+  * Sign repository and add gpg public key (to remove "unauthenticated package" installaton warning)
 
  -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
 
