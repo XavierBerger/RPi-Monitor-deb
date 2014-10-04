@@ -33,7 +33,7 @@ Activate https transport for apt:
 
 Add my public key to the trusted key list for apt:
 
-    wget http://127.0.0.1:8000/XavierBerger/RPi-Monitor-deb/raw/devel/repo/XavierBerger.gpg.pub -O - | sudo apt-key add -
+    sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 2C0D3C0F
 
 Execute the following command to add rpimonitor into your list of repository:
 
