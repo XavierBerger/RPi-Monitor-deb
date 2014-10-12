@@ -1,0 +1,24 @@
+Architectures: amd64 i386 armhf source any all
+Codename: XavierBerger/RPi-Monitor-deb/raw/devel/repo
+Components: main
+Date: Sun, 12 Oct 2014 14:01:04 UTC
+Description: RPi-Monitor Debian package repository.
+Label: XavierBerger
+Origin: XavierBerger
+Suite: custom
+MD5Sum:
+ 080b82f9b0a1ffb29aa748e974d4171d              616 Packages
+ 1294a299394622588f0527bb4ef6e9eb              440 Packages.gz
+ d41d8cd98f00b204e9800998ecf8427e                0 Release
+SHA1:
+ b171774c1edca6c4303053e8032f1fa1c8b0cf92              616 Packages
+ e7a1b31de977378642737f827da7291c60904ba5              440 Packages.gz
+ da39a3ee5e6b4b0d3255bfef95601890afd80709                0 Release
+SHA256:
+ 23e444e630c4a74fe517d084f2d68b7122a03524013e74da485c1cc00280556c              616 Packages
+ aa4b439a2e5631a23931cc92c2d4b40bf90250721146cfbb4e8f1de3d5cd86b1              440 Packages.gz
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 Release
+SHA512:
+ d54d235bf1557e7010fe793b8cc2c3aefb7e9a747b8594b1216aa5295131a0b2b357c387a2a5b59801e1e7d0abb00c4631828939278ea054ff41c9de3666ef8a              616 Packages
+ 1a6fb44e21e87775316c1b91784e136323c99dd22b2c8b606197180c63295571b57e53a913286a180e44b9d59c643d345e29b2eab8d656aee230a53a1f4997fe              440 Packages.gz
+ cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e                0 Release
