@@ -18,17 +18,21 @@ RPIMONITOR_REPO=../RPi-Monitor
 DPKGSRC=dpkg-src
 RPIMONITOR_SRC=source
 VERSION=$(cat ../RPi-Monitor/VERSION)
+BRANCH=$(git branch | perl -ne '/^\* (.*)/ and print "$1"')
 
-#echo "Is changelog up to date for version $(cat ../RPi-Monitor/VERSION)?"
-echo -e "\033[31m\033[1mWARNING\033[0m: the directory $(pwd)/${DPKGSRC} will be destroyed"
-echo -ne "Continue yes/no [no]:"
-read continue
-if [[ $continue != *"yes"* ]]; then
- echo -e "You must enter \033[1myes\033[0m to continue. Script aborted".
- exit 1
+echo -e "\033[1mIs changelog need update for version $(cat ../RPi-Monitor/VERSION)?"
+echo -ne "yes/no ["
+if [[ $BRANCH != *"devel"* ]]; then
+  echo -ne "yes"
+else
+  echo -ne "no"
 fi
+echo -ne "]:\033[0m"
+read continue
 
-vi debian/changelog
+if [[ $BRANCH != *"devel"* ]] || [[ $continue == *"yes"* ]]; then
+  vi debian/changelog
+fi
 
 echo
 echo -e "\033[1mRemoving old ${DPKGSRC} directory\033[0m"
@@ -37,7 +41,12 @@ sudo rm -fr ${DPKGSRC}
 echo
 echo -e "\033[1mUpdating RPi-Monitor source\033[0m"
 rm -fr ${RPIMONITOR_SRC}
-git clone --no-hardlinks ${RPIMONITOR_REPO} ${RPIMONITOR_SRC}
+if [[ $BRANCH != *"devel"* ]]; then
+  git clone --no-hardlinks ${RPIMONITOR_REPO} ${RPIMONITOR_SRC}
+else
+  mkdir -p ${RPIMONITOR_SRC}
+  cp -a ../RPi-Monitor/* ${RPIMONITOR_SRC}/
+fi  
 RPIMONITOR_SRC=../${RPIMONITOR_SRC}
 
 echo
@@ -48,6 +57,7 @@ echo
 echo -e "\033[1mConstructing debian package structure\033[0m"
 cd ${DPKGSRC}
 cp -a ../debian DEBIAN
+rm DEBIAN/apt-release.conf
 sed -i "s/{DATE}/$(LANG=EN; date)/" DEBIAN/changelog
 cp -a ${RPIMONITOR_SRC}/init etc
 rm etc/apt/sources.list.d/rpimonitor.list
@@ -80,30 +90,42 @@ sudo chown -R root:root etc usr
 cd ..
 dpkg -b ${DPKGSRC} packages/rpimonitor_${VERSION}-1_all.deb
 
-branch=$(git branch | perl -ne '/^\* (.*)/ and print "$1"')
 echo
-echo -e "\033[1mUpdating repository for branch \033[31m\033[1m${branch}\033[0m:\033[0m"
-cd repo
-sed -i "s/{BRANCH}/${branch}/" apt-release.conf
-rm *.deb Packages.gz
-ln ../packages/rpimonitor_${VERSION}-1_all.deb rpimonitor_${VERSION}-1_all.deb
-cd ..
-dpkg-scanpackages repo /dev/null XavierBerger/RPi-Monitor-deb/raw/${branch}/ > repo/Packages
-gzip -k repo/Packages
+echo -e "\033[1mUpdate repository for $(cat ../RPi-Monitor/VERSION)?"
+echo -ne "yes/no ["
+if [[ $BRANCH != *"devel"* ]]; then
+  echo -ne "yes"
+else
+  echo -ne "no"
+fi
+echo -ne "]:\033[0m"
+read continue
 
-apt-ftparchive -c=repo/apt-release.conf release repo > repo/Release
-rm repo/Release.gpg
-gpg --armor --detach-sign --sign --output repo/Release.gpg repo/Release
+if [[ $BRANCH != *"devel"* ]] || [[ $continue == *"yes"* ]]; then
+  echo
+  echo -e "\033[1mUpdating repository for branch \033[31m\033[1m${BRANCH}\033[0m:\033[0m"
+  cd repo
+  sed -i "s/{BRANCH}/${BRANCH}/" apt-release.conf
+  rm *.deb Packages.gz
+  ln ../packages/rpimonitor_${VERSION}-1_all.deb rpimonitor_${VERSION}-1_all.deb
+  cd ..
+  dpkg-scanpackages repo /dev/null XavierBerger/RPi-Monitor-deb/raw/${BRANCH}/ > repo/Packages
+  gzip -k repo/Packages
 
-echo
-echo -e "\033[1mCreating package for Raspberry Pi Store\033[0m"
-cd store/rpimonitor
-rm *.deb
-ln ../../packages/rpimonitor_${VERSION}-1_all.deb rpimonitor_${VERSION}-1_all.deb
-cd ..
-zip rpimonitor_${VERSION}-1_all.zip rpimonitor/*
+  apt-ftparchive -c=debian/apt-release.conf release repo > repo/Release
+  rm repo/Release.gpg
+  gpg --armor --detach-sign --sign --output repo/Release.gpg repo/Release
 
-cd ..
+  echo
+  echo -e "\033[1mCreating package for Raspberry Pi Store\033[0m"
+  cd store/rpimonitor
+  rm *.deb
+  ln ../../packages/rpimonitor_${VERSION}-1_all.deb rpimonitor_${VERSION}-1_all.deb
+  cd ..
+  zip rpimonitor_${VERSION}-1_all.zip rpimonitor/*
+  cd ..
+fi
+
 echo
 echo -ne "\033[1mInstall RPi-Monitor $VERSION now? (Ctl+C to cancel)\033[0m"
 read continue
