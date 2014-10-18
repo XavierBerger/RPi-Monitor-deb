@@ -57,6 +57,7 @@ echo
 echo -e "\033[1mConstructing debian package structure\033[0m"
 cd ${DPKGSRC}
 cp -a ../debian DEBIAN
+rm DEBIAN/apt-release.conf
 sed -i "s/{DATE}/$(LANG=EN; date)/" DEBIAN/changelog
 cp -a ${RPIMONITOR_SRC}/init etc
 rm etc/apt/sources.list.d/rpimonitor.list
@@ -111,7 +112,7 @@ if [[ $BRANCH != *"devel"* ]] || [[ $continue == *"yes"* ]]; then
   dpkg-scanpackages repo /dev/null XavierBerger/RPi-Monitor-deb/raw/${BRANCH}/ > repo/Packages
   gzip -k repo/Packages
 
-  apt-ftparchive -c=repo/apt-release.conf release repo > repo/Release
+  apt-ftparchive -c=debian/apt-release.conf release repo > repo/Release
   rm repo/Release.gpg
   gpg --armor --detach-sign --sign --output repo/Release.gpg repo/Release
 
