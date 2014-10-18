@@ -1,3 +1,9 @@
+rpimonitor (2.9.1-1) UNRELEASED; urgency=low
+
+ * Fix issue #63 - Multiple pages index not correctly managed
+
+ -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+
 rpimonitor (2.9-1) UNRELEASED; urgency=low
 
   * Migrate style to bootstrap 3.2.0 
@@ -8,7 +14,7 @@ rpimonitor (2.9-1) UNRELEASED; urgency=low
   * Add example configuration files showing rpimonitor rendering features
   * Sign repository and add gpg public key (to remove "unauthenticated package" installaton warning)
 
- -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+ -- Xavier Berger <berger.xavier@gmail.com>  Sun Oct 12 21:38:05 CEST 2014
 
 rpimonitor (2.8-1) UNRELEASED; urgency=low
 
