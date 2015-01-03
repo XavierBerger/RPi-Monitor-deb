@@ -1,6 +1,7 @@
 rpimonitor (2.10-1) UNRELEASED; urgency=low
 
-  * Add addons allowing to create custom pages (enhancement issue #27 #28 #47)
+  * Duplicate statistics + status when .conf placed in /etc/rpimonitor (Fix issue # 68 )
+  * Add addons allowing to create custom pages (Enhancement issue #27 #28 #47)
   * Add suport of UTF-8 (Fix issue #43)
   * Add BananaPi configuration from tkaiser (http://forum.lemaker.org/forum.php?mod=viewthread&tid=8137)
 
