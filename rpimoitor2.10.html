@@ -1,0 +1,147 @@
+<span style="font-family: Arial,Helvetica,sans-serif;">The version 2.10 of&nbsp;<b>RPi-Monitor</b>&nbsp;has been released.</span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><br /></span>
+<span style="font-family: Arial,Helvetica,sans-serif;">If you don't know yet what<b>&nbsp;RPI-Monitor</b>&nbsp;do, have a look to&nbsp;<a href="http://rpi-experiences.blogspot.fr/p/rpi-monitor.html">RPi-Monitor Overview</a>.</span><br />
+<div style="text-align: center;">
+  <span style="font-family: Arial,Helvetica,sans-serif;"><br /></span></div>
+<div class="separator" style="clear: both; text-align: center;">
+</div>
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
+  <tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-ynSKjny-k40/VDRCH0GruWI/AAAAAAAACS0/saYyZ-1TX8k/s1600/4176258409_69901fa6a0_z.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://4.bp.blogspot.com/-ynSKjny-k40/VDRCH0GruWI/AAAAAAAACS0/saYyZ-1TX8k/s1600/4176258409_69901fa6a0_z.jpg" height="320" width="240" /></a></td></tr>
+  <tr><td class="tr-caption" style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;">Photo from flickr <a href="https://www.flickr.com/photos/little-greene-paint-company/4176258409/in/photostream/">little-greene-paint-company</a> by <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">by-nc-nd</a></span></td></tr>
+</tbody></table>
+<div class="separator" style="clear: both; text-align: center;">
+</div>
+<div class="separator" style="clear: both; text-align: center;">
+  <span style="font-family: Arial,Helvetica,sans-serif;"><br /></span></div>
+<span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: large;">What's new in this version?</span></span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;">This version is coming with internal changes, improvement and bug fixes.</span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><br /></span>
+<span style="font-family: Arial,Helvetica,sans-serif;">Here is the changelog of version 2.10:</span><br />
+<ul>
+  <li><span style="font-family: Arial,Helvetica,sans-serif;"><b>Add addons allowing to create custom page </b><b><br />- </b>Top3 addon</span><br /><span style="font-family: Arial,Helvetica,sans-serif;"><b>- </b>Example addon</span><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: Arial,Helvetica,sans-serif;"><b><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: Arial,Helvetica,sans-serif;"><b>- </b></span></span></b><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: Arial,Helvetica,sans-serif;">Shellinabox addon</span></span><b>-</b> Custom addon</span><b><span style="font-family: Arial,Helvetica,sans-serif;"><br /></span>- </b>Webcam: use Hawkeye and custom addon to display webcam </span></li>
+  <li><span style="font-family: Arial,Helvetica,sans-serif;">Support UTF-8 fixing issue #43</span></li>
+  <li><span style="font-family: Arial,Helvetica,sans-serif;">Add BananaPi configuration files (found in BananaPi forum)</span></li>
+</ul>
+<span style="font-family: Arial,Helvetica,sans-serif;"><b></b></span><br />
+<!--more--><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: large;">Installation or upgrade from the repository&nbsp; </span></span><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;">If you already have installed the latest version of <b>RPi-Monitor</b> using the repository, you can execute the following commands to upgrade: </span><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"></span></span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;">&nbsp;&nbsp;&nbsp; </span><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">sudo</span></span><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"> apt-get update</span><br />&nbsp;&nbsp;&nbsp; <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">sudo apt-get upgrade</span></span><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;">If you install <b>RPi-Monitor</b> for the first time, follow to the instruction bellow to install the repository and install <b>RPi-Monitor</b> with the </span><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: Arial,Helvetica,sans-serif;"> <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">apt-get</span></span> command.<br /><br />Activate https transport for apt and add certificate authority:</span><span style="font-family: Arial,Helvetica,sans-serif;">&nbsp;</span><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;">&nbsp;&nbsp;&nbsp; </span><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">sudo apt-get install apt-transport-https ca-certificates</span><br /><br />Install my public key to trust <b>RPi-Monitor</b> repository:</span><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;">&nbsp; &nbsp; <span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 2C0D3C0F</span></span></span></span> </span><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;">Execute the following command to add <b>RPi-Monitor</b> into your list of repository:</span><span style="font-family: Arial,Helvetica,sans-serif;">&nbsp;</span><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;">&nbsp;&nbsp;&nbsp; </span><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">sudo wget http://goo.gl/rsel0F -O /etc/apt/sources.list.d/rpimonitor.list</span></span><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;">To install <b>RPi-Monitor</b>, execute the following command:</span><span style="font-family: Arial,Helvetica,sans-serif;">&nbsp;</span><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;">&nbsp;&nbsp;&nbsp; </span><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">sudo apt-get update</span></span></span></span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><span style="font-family: Arial,Helvetica,sans-serif;">&nbsp;&nbsp;&nbsp; </span></span></span>sudo apt-get install rpimonitor</span></span><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;">After installation or upgrade you should excute the following command to update information about upgradable packages:</span><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp; sudo /usr/share/rpimonitor/scripts/updatePackagesStatus.pl</span></span><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;">Manual installation is still working. Refer to <a href="http://rpi-monitor%20installation/">RPi-Monitor Installation</a> page for explaination.</span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><br /></span>
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: large;"><span style="font-size: large;">New: Addons and custom pages</span></span></span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><b><br /></b></span><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: Arial,Helvetica,sans-serif;"><b>RPi-Monitor</b></span> is now supporting addons. Addons can be custom pages designed to give you the possibility to free your imagination and cutomise <b>RPi-Monitor</b> to your needs.</span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><br />Addons are html pages, javascript and css directly integrated into <b>RPi-Monitor</b>. </span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: Arial,Helvetica,sans-serif;">&nbsp;</span></span><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: Arial,Helvetica,sans-serif;">The activation of an addon is done into <b>RPi-Monitor</b> configuration file. The following line is showing how to activate the default addons explaing addons feature:&nbsp; </span></span><br />
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><br /></span>
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp; web.addons.1.name=Addons<br />&nbsp; web.addons.1.addons=about</span><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;">It is possible to use an addon many time into a same configuration file (using different parameters if the addon support them). </span><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;">The next part of this article will show you some example of addons and is highlighting the possibilities of this new feature.</span><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: Arial,Helvetica,sans-serif;"><b>Top3 Addon&nbsp;</b></span></span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: Arial,Helvetica,sans-serif;"><b>&nbsp; </b></span></span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: Arial,Helvetica,sans-serif;"><b>Top3</b> is showing how to use addons to add additionnal information into status page. This addons is designed to periodically generate HTML content. This content can be accessible from the addons menu (if addon is configured in rpimonotord configuration file) and/or can be inserted into status page using the function InsertHTML(). </span></span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: Arial,Helvetica,sans-serif;"><b></b></span></span><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: Arial,Helvetica,sans-serif;">To activate this addon, add the following line to your configuration file</span></span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: Arial,Helvetica,sans-serif;">&nbsp; </span></span><br />
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp; web.addons.2.name=Top3</span><br />
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp; web.addons.2.addons=top3</span><br />
+<br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;">and configure the cron of your Raspberry Pi to update the HTML content preiodically. This can be done with the following lines:</span><br />
+<br />
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">* * * * * root cd /usr/share/rpimonitor/web/addons/top3; ./top3 &gt; top3.html</span><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;">For deeper details, refer to rpimonitor manpage and to comments available into the script <b>top3</b>.</span><br />
+<br />
+<b><span style="font-family: Arial,Helvetica,sans-serif;">Example Addon</span></b><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;">If you want to develop your own addon, you can refer to the example addons to see how to implement such a feature.</span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;">Example addon is providing a HTML page, a javacript and a CSS showing how an addon page can interact with <b>RPi-Monitor</b>.&nbsp;&nbsp;</span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><br /></span>
+<span style="font-family: Arial,Helvetica,sans-serif;">Example addon can activate by adding the following lines into the configuration file:</span><br />
+<br />
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp; web.addons.3.name=Addon example</span><br />
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp; web.addons.3.addons=example</span><br />
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp; web.addons.3.parameter=parameter_example</span> </span><br />
+<h4>
+  <span style="font-family: Arial,Helvetica,sans-serif;">Shellinabox Addon</span></h4>
+<span style="font-family: Arial,Helvetica,sans-serif;">Shellinabox is now an addon. It activation should now be activated as an addons</span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;">&nbsp;</span><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp; web.addons.4.name=ShelleInABox</span><br />
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp; web.addons.4.addons=shellinabox</span><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;">The behavior of this addon remain the same as previously embe</span><span style="font-family: Arial,Helvetica,sans-serif;">dded feature.</span><br />
+<br />
+<b><span style="font-family: Arial,Helvetica,sans-serif;">Custom Addon</span></b><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;">If you are not confortable with html, javascript and css, the addon custom may help you to customise <b>RPi-Monitor</b> to your wishes. This addons implement an <i>iframe</i> that can display any other web pages.</span><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp; web.addons.5.name=Custom addons<br />&nbsp; web.addons.5.addons=custom<br />&nbsp; web.addons.5.url=/addons/custom/custominfo.html</span> </span><br />
+<h4>
+  <span style="font-family: Arial,Helvetica,sans-serif;">url<span style="font-weight: normal;"> is defining the page to be displayed into the iframe. It can be a file reachable from <b>RPi-Monitor</b> internal server or a site available into the Internet.</span></span></h4>
+<h4>
+  <span style="font-family: Arial,Helvetica,sans-serif;">Webcam</span></h4>
+<h4>
+  <span style="font-weight: normal;"><span style="font-family: Arial,Helvetica,sans-serif;">If you want to see the image of your webcam in your brower, you can use <a href="https://github.com/ipartola/hawkeye">hawkeye</a>. Once hawkeye installed, it is very easy to add it into RPi-Monitor interface using the custom addon. The configuration will then be the following:</span></span></h4>
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp; web.addons.3.name=Webcam - Hawkeye<br />&nbsp; web.addons.3.addons=custom<br />&nbsp; web.addons.3.url=http://raspberry_adress:8000/</span><br />
+<br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><b>url</b> parameter point to hawkeye web interface. If you are doing such a configuration, keep in mind about the security of your images. You should use the capacity of hawkeye to restrict the access to the image using a login and a password. You can also have a look to my article showing <a href="http://rpi-experiences.blogspot.fr/2013/05/rpi-monitor-security-and-authentication.html">how to secure the access to <b>RPi-monitor</b></a>. </span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;">&nbsp;</span>
+
+<span style="font-family: Arial,Helvetica,sans-serif;"><br /></span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: large;">Customization</span></span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><br /></span>
+<span style="font-family: Arial,Helvetica,sans-serif;"><b>RPi-Monitor</b>&nbsp;is fully configurable so if the displayed information doesn't match you need, customize it.</span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;">Everything display in status pages or in statistics pages can be modified, tuned and customized to your needs.</span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;"><br /></span>
+<span style="font-family: Arial,Helvetica,sans-serif;">To see how to customize it, use the command</span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;">&nbsp; &nbsp; <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">man&nbsp;rpimonitord</span></span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;">and</span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;">&nbsp; &nbsp; <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">man&nbsp;rpimonitord.conf</span></span><br />
+<div>
+  <span style="font-family: Arial,Helvetica,sans-serif;"><br /></span></div>
+<span style="font-family: Arial,Helvetica,sans-serif;">To define the configuration you can use <a href="http://rpi-experiences.blogspot.fr/2014/03/rpi-monitor-interactive-configuration.html">RPi-Monitor Interactive Configuration Helper</a> whit the command:</span><br />
+<span style="font-family: Arial,Helvetica,sans-serif;">&nbsp; &nbsp; <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">rpimonitord -i</span></span><br />
+<div>
+  <span style="font-family: Arial,Helvetica,sans-serif;"><br /></span></div>
+<span style="font-family: Arial,Helvetica,sans-serif;">You will find some examples of customization in&nbsp;<a href="http://rpi-experiences.blogspot.fr/p/rpi-monitor-articles.html"><b>RPi-Monitor</b>&nbsp;articles</a>.</span><br />
+<div>
+  <br />
+  <span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: large;">Usage</span></span><br />
+  <span style="font-family: Arial,Helvetica,sans-serif;"><br /></span>
+  <span style="font-family: Arial,Helvetica,sans-serif;">Once&nbsp;<b>RPi-Monitor</b>&nbsp;is configured as you wished, browse&nbsp;<a href="http://rpiipaddress:8888/">http://RPiIpAddress:8888/</a>&nbsp;to access to the web interface.</span><br />
+  <span style="font-family: Arial,Helvetica,sans-serif;"><br /></span>
+  <span style="font-family: Arial,Helvetica,sans-serif;"><span style="color: #990000;"><b>Note</b>:
+       The graphs rendering may have strange behavior on Google-Chrome on 
+       Windows while it works fine on Linux. Internet Explorer is even not able
+        to display statistics, it is then advised to use Firefox on Windows or 
+        better... switch to Linux! ;-).</span></span><span style="color: #cc0000;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="color: #990000;"><b>&nbsp;</b></span></span></span></span><br />
+    <span style="color: #cc0000;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="color: #990000;"><b>Note 2</b>: Since RPi-Monitor is now using bootstrap 3, the behavior may have changed. Your comments are welcome.</span></span></span></span></div>
+
+
