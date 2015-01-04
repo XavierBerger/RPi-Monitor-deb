@@ -1,24 +1,24 @@
 Architectures: amd64 i386 armhf source any all
 Codename: XavierBerger/RPi-Monitor-deb/raw/devel/repo
 Components: main
-Date: Sun, 04 Jan 2015 12:08:40 UTC
+Date: Sun, 04 Jan 2015 17:15:00 UTC
 Description: RPi-Monitor Debian package repository.
 Label: XavierBerger
 Origin: XavierBerger
 Suite: custom
 MD5Sum:
- e77edfce3beb61a24bb32f0cf52c41ad              618 Packages
- 08277045639ccfcd0a335ca5772f0779              441 Packages.gz
+ 77a0edf453c58acb323a3991d8bcb66e              618 Packages
+ 03dbb55db059e148bc92613253ba328c              442 Packages.gz
  d41d8cd98f00b204e9800998ecf8427e                0 Release
 SHA1:
- a97a3b2733049f23b61bd8d4c2ec9bd448cd9fac              618 Packages
- 7b7394c2e00a4dcfa34eb64d959fdb7b870459d2              441 Packages.gz
+ 4b6bb1cfdc82fbc61a07ea23f9da1dd2e3b84466              618 Packages
+ afbbb1fad146013360d89f1ea7e66c8caf3c5eef              442 Packages.gz
  da39a3ee5e6b4b0d3255bfef95601890afd80709                0 Release
 SHA256:
- 0b6501f6b990217b77793e25d0e7eeaccaa4b050e4d0b750576b79997ffb006b              618 Packages
- af26fec4faaffa1823653f24f60bf277888075dc2033c44a7f164a026655e16f              441 Packages.gz
+ ca584bd7a544314253b4e79700cfd3e3548dfc550dcd84070d958b74df41a7df              618 Packages
+ bb6262fb2c9fcde56af6d604264ec0ef8faf3f07e28beedbc21bfa299c2064e5              442 Packages.gz
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 Release
 SHA512:
- 53621744dfc294991e9143801ff12d6be286711ee71c4591ab8255e6e4d463afb3892e8cb3de6940628e9c698d2c244345ea0086f17992c7a5232658c7b130e3              618 Packages
- 2b1c98288435c4e38db10c9e458338eb46ae34cef42c3701961f64f1a290d21cf4defcc09f73649068a8456d214eabd7a4a9e16032e623b513bf93df7c6500ba              441 Packages.gz
+ 54be0ebc36362e59a5088c5103201f8d58c9641aaedeeb690672eaad5dcc7cb90fa54c0665a7f01f393d16a1e3e4e0e8293c81bb6ddc50c26b71968a82404c32              618 Packages
+ 928ea76ad03122e24407c418729ef8570b5246c78ec523b3dcb7bb8767e205f18c80df99169358db2eae8e61a74f13f16e507b6017e4337fa2aff0acbc4e1455              442 Packages.gz
  cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e                0 Release
