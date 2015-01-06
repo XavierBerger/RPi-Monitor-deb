@@ -1,8 +1,18 @@
+rpimonitor (2.10-1) UNRELEASED; urgency=low
+
+  * Use only data.conf and daemon.conf to avoid duplicate statistics + status when .conf placed in /etc/rpimonitor (Fix issue # 68 )
+  * Add addons allowing to create custom pages (Enhancement issue #27 #28 #47)
+  * Add suport of UTF-8 (Fix issue #43)
+  * Add BananaPi configuration from tkaiser (http://forum.lemaker.org/forum.php?mod=viewthread&tid=8137)
+  * Add mysql status in services.conf example file
+
+ -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+
 rpimonitor (2.9.1-1) UNRELEASED; urgency=low
 
  * Fix issue #63 - Multiple pages index not correctly managed
 
- -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+ -- Xavier Berger <berger.xavier@gmail.com>  Sat Oct 18 11:29:44 CEST 2014
 
 rpimonitor (2.9-1) UNRELEASED; urgency=low
 

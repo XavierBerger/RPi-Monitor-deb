@@ -68,6 +68,9 @@ cp ${RPIMONITOR_SRC}/rpimonitor/rpimonitord usr/bin
 cp -a ${RPIMONITOR_SRC}/rpimonitor/web/ usr/share/rpimonitor
 cp -a ${RPIMONITOR_SRC}/scripts/ usr/share/rpimonitor
 cp ${RPIMONITOR_SRC}/rpimonitor/updatestatus.txt var/lib/rpimonitor
+pushd usr/share/rpimonitor/web
+  ln -s /var/lib/rpimonitor/stat stat
+popd
 
 echo
 echo -e "\033[1mPost processing\033[0m"
