@@ -1,6 +1,7 @@
 rpimonitor (2.10-1) UNRELEASED; urgency=low
 
   * Support multicolumn view in status page for large screen (Enhancement #77)
+  * Allow to use addons when RPi-Monitor is protected by a reveres proxy.
 
  -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
 
