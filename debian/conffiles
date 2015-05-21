@@ -1,3 +1,2 @@
 /etc/rpimonitor/daemon.conf
-/etc/rpimonitor/template/raspbian.conf
-/etc/rpimonitor/template/xbian.conf
+/etc/rpimonitor/data.conf

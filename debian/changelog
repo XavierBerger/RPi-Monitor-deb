@@ -1,9 +1,10 @@
-rpimonitor (2.11-1) UNRELEASED; urgency=low
+rpimonitor {VERSION}-{REVISION} UNRELEASED; urgency=low
 
   * Support multicolumn view in status page for large screen (Enhancement #77)
   * Allow to use addons when RPi-Monitor is protected by a reverse proxy.
   * Set Status page as default landing page.
   * Add logfile in configurable destination (Default: /var/log/rpimonitor.log)
+  * RRD structure are now configurable per KPI
   * Bug fixes
 
  -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
