@@ -48,8 +48,14 @@ if [[ $BRANCH == *"master"* ]]; then
 else
   mkdir -p ${RPIMONITOR_SRC}
   cp -a ../RPi-Monitor/* ${RPIMONITOR_SRC}/
-  ((REVISION++));
-  echo ${REVISION} > REVISION
+  echo
+  echo -e "\033[1mIncrement revision (REVISION=${REVISION})?"
+  echo -ne "yes/no [no]:\033[0m"
+  read continue
+  if [[ $continue == *"yes"* ]]; then
+    ((REVISION++));
+    echo ${REVISION} > REVISION
+  fi
   REVISION="-beta-${REVISION}"
 fi  
 RPIMONITOR_SRC=../${RPIMONITOR_SRC}
