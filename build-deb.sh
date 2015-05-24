@@ -44,19 +44,19 @@ echo -e "\033[1mUpdating RPi-Monitor source\033[0m"
 rm -fr ${RPIMONITOR_SRC}
 if [[ $BRANCH == *"master"* ]]; then
   git clone --no-hardlinks ${RPIMONITOR_REPO} ${RPIMONITOR_SRC}
-  REVISION="-1"
+  REVISION="-r1"
 else
   mkdir -p ${RPIMONITOR_SRC}
   cp -a ../RPi-Monitor/* ${RPIMONITOR_SRC}/
   echo
-  echo -e "\033[1mIncrement revision (REVISION=${REVISION})?"
+  echo -e "\033[1mIncrement revision (REVISION=beta${REVISION})?"
   echo -ne "yes/no [no]:\033[0m"
   read continue
   if [[ $continue == *"yes"* ]]; then
     ((REVISION++));
     echo ${REVISION} > REVISION
   fi
-  REVISION="-beta-${REVISION}"
+  REVISION="-beta${REVISION}"
 fi  
 RPIMONITOR_SRC=../${RPIMONITOR_SRC}
 
