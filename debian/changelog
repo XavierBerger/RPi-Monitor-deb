@@ -5,7 +5,7 @@ rpimonitor {VERSION}-{REVISION} UNRELEASED; urgency=low
   * Set Status page as default landing page.
   * Add logfile in configurable destination (Default: /var/log/rpimonitor.log)
   * RRD structure are now configurable per KPI
-  * Bug fixes
+  * Bug fixes and cleanup code
 
  -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
 
