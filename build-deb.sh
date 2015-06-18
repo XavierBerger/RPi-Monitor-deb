@@ -108,16 +108,10 @@ dpkg -b ${DPKGSRC} packages/rpimonitor_${VERSION}${REVISION}_all.deb
 
 echo
 echo -e "\033[1mUpdate repository for ${VERSION}?"
-echo -ne "yes/no ["
-if [[ $BRANCH == *"master"* ]]; then
-  echo -ne "yes"
-else
-  echo -ne "no"
-fi
-echo -ne "]:\033[0m"
+echo -ne "yes/no [yes]:\033[0m"
 read continue
 
-if [[ $BRANCH == *"master"* ]] || [[ $continue == *"yes"* ]]; then
+if [[ $BRANCH == *"master"* ]] || [[ $continue != *"no"* ]]; then
   echo
   echo -e "\033[1mUpdating repository for branch \033[31m\033[1m${BRANCH}\033[0m:\033[0m"
   cd repo
