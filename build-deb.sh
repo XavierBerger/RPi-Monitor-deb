@@ -93,10 +93,10 @@ sed -i "s/{DEVELOPMENT}/${VERSION}/" usr/share/rpimonitor/web/js/rpimonitor.js
 find etc/rpimonitor/ -type f | sed  's/etc/\/etc/' > DEBIAN/conffiles
 
 mkdir -p usr/share/man/man1
-../help2man.pl usr/bin/rpimonitord ${VERSION} | gzip -c > usr/share/man/man1/rpimonitord.1.gz
+${RPIMONITOR_SRC}/tools/help2man.pl usr/bin/rpimonitord ${VERSION} | gzip -c > usr/share/man/man1/rpimonitord.1.gz
 mkdir -p usr/share/man/man5
 cat ${RPIMONITOR_SRC}/rpimonitor/daemon.conf ${RPIMONITOR_SRC}/rpimonitor/template/raspbian.conf > rpimonitord.conf
-../conf2man.pl rpimonitord.conf ${VERSION} | gzip -c > usr/share/man/man5/rpimonitord.conf.5.gz
+${RPIMONITOR_SRC}/tools/conf2man.pl rpimonitord.conf ${VERSION} | gzip -c > usr/share/man/man5/rpimonitord.conf.5.gz
 rm -f rpimonitord.conf
 
 echo
