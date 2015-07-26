@@ -6,7 +6,7 @@ rpimonitor {VERSION}-{REVISION} UNRELEASED; urgency=low
   * Add logfile in configurable destination (Default: /var/log/rpimonitor.log)
   * RRD structure are now configurable per KPI
   * Rounding temperation to 2 digit as proposed in issue #86
-  * Add possibility to use result of KPI into source
+  * Add possibility to use result of KPI into source with keyword 'data.<kpi>'
   * Add arch configuration files
   * Add tools dedicated to generate manpages
   * Bug fixes and cleanup code
