@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 RPIMONITOR_REPO=../RPi-Monitor
-DPKGSRC=dpkg-src
+DPKGSRC=$(pwd)/dpkg-src/
 RPIMONITOR_SRC=source
 VERSION=$(cat ../RPi-Monitor/VERSION)
 REVISION=$(cat REVISION)
@@ -72,30 +72,27 @@ mv DEBIAN/apt-release.conf ../repo
 sed -i "s/{DATE}/$(LANG=EN; date)/" DEBIAN/changelog
 sed -i "s/{VERSION}/${VERSION}/" DEBIAN/changelog
 sed -i "s/{REVISION}/${REVISION}/" DEBIAN/changelog
-cp -a ${RPIMONITOR_SRC}/init etc
-rm etc/apt/sources.list.d/rpimonitor.list
-mkdir -p usr/bin etc/rpimonitor usr/share/rpimonitor var/lib/rpimonitor
-cp ${RPIMONITOR_SRC}/rpimonitor/daemon.conf etc/rpimonitor
-cp -a ${RPIMONITOR_SRC}/rpimonitor/template etc/rpimonitor/template
-cp ${RPIMONITOR_SRC}/rpimonitor/rpimonitord usr/bin
-cp -a ${RPIMONITOR_SRC}/rpimonitor/web/ usr/share/rpimonitor
-cp -a ${RPIMONITOR_SRC}/scripts/ usr/share/rpimonitor
-cp ${RPIMONITOR_SRC}/rpimonitor/updatestatus.txt var/lib/rpimonitor
-pushd usr/share/rpimonitor/web
-  ln -s /var/lib/rpimonitor/stat stat
+
+# Copy from sources
+pushd ${RPIMONITOR_SRC}
+  export TARGETDIR=${DPKGSRC}
+  make install
 popd
 
 echo
 echo -e "\033[1mPost processing\033[0m"
+
+# Defining version
 sed -i "s/{DEVELOPMENT}/${VERSION}${REVISION}/" DEBIAN/control
 sed -i "s/{DEVELOPMENT}/${VERSION}/" usr/bin/rpimonitord
 sed -i "s/{DEVELOPMENT}/${VERSION}/" usr/share/rpimonitor/web/js/rpimonitor.js
 find etc/rpimonitor/ -type f | sed  's/etc/\/etc/' > DEBIAN/conffiles
 
+# Creating man files
 mkdir -p usr/share/man/man1
 ${RPIMONITOR_SRC}/tools/help2man.pl usr/bin/rpimonitord ${VERSION} | gzip -c > usr/share/man/man1/rpimonitord.1.gz
 mkdir -p usr/share/man/man5
-cat ${RPIMONITOR_SRC}/rpimonitor/daemon.conf ${RPIMONITOR_SRC}/rpimonitor/template/raspbian.conf > rpimonitord.conf
+cat etc/rpimonitor/daemon.conf etc/rpimonitor/template/raspbian.conf > rpimonitord.conf
 ${RPIMONITOR_SRC}/tools/conf2man.pl rpimonitord.conf ${VERSION} | gzip -c > usr/share/man/man5/rpimonitord.conf.5.gz
 rm -f rpimonitord.conf
 
@@ -129,7 +126,7 @@ if [[ $BRANCH == *"master"* ]] || [[ $continue != *"no"* ]]; then
   echo
   echo -e "\033[1mCreating package for Raspberry Pi Store\033[0m"
   cd store/rpimonitor
-  rm *.deb
+  rm *.deb > /dev/null
   ln ../../packages/rpimonitor_${VERSION}${REVISION}_all.deb rpimonitor_${VERSION}${REVISION}_all.deb
   cd ..
   zip rpimonitor_${VERSION}${REVISION}_all.zip rpimonitor/*

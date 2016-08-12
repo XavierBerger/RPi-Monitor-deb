@@ -31,4 +31,4 @@ chmod 600 /etc/cron.d/rpimonitor
 update-rc.d -f rpimonitor remove
 update-rc.d -f rpimonitor defaults
 # start RPi-Monitor
-/etc/init.d/rpimonitor start
+/etc/init.d/rpimonitor restart
