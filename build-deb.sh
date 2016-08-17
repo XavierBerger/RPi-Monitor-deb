@@ -112,18 +112,14 @@ if [[ $BRANCH == *"master"* ]] || [[ $continue != *"no"* ]]; then
   echo
   echo -e "\033[1mUpdating repository for branch \033[31m\033[1m${BRANCH}\033[0m:\033[0m"
   cd repo
-  sed -i "s/{BRANCH}/${BRANCH}/" apt-release.conf
   rm *.deb Packages.gz
   ln ../packages/rpimonitor_${VERSION}${REVISION}_all.deb rpimonitor_${VERSION}${REVISION}_all.deb
-  cd ..
-  dpkg-scanpackages -h sha256 repo /dev/null XavierBerger/RPi-Monitor-deb/raw/${BRANCH}/ > repo/Packages
-  gzip -k repo/Packages
+  dpkg-scanpackages -h sha256 . /dev/null rpimonitor/ > Packages
+  gzip -k Packages
 
-  apt-ftparchive -c=repo/apt-release.conf release repo > repo/Release
-  rm repo/Release.gpg
-  gpg --armor --detach-sign --sign --output repo/Release.gpg repo/Release
-
-
+  apt-ftparchive -c=apt-release.conf release . > Release
+  rm Release.gpg
+  gpg --armor --detach-sign --sign --output Release.gpg Release
 fi
 
 echo

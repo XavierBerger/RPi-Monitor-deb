@@ -1,24 +1,24 @@
 Architectures: amd64 i386 armhf source any all
-Codename: XavierBerger/RPi-Monitor-deb/raw/devel/repo
+Codename: XavierBerger/RPi-Monitor-deb/raw/{BRANCH}/repo
 Components: main
-Date: Wed, 17 Aug 2016 18:02:54 UTC
+Date: Wed, 17 Aug 2016 18:10:43 UTC
 Description: RPi-Monitor Debian package repository.
 Label: XavierBerger
 Origin: XavierBerger
 Suite: custom
 MD5Sum:
- fefc9060f6c0e024df5ac65005c8356b              533 repo/Packages
- 0ed8545092a3dc6fdcc6ddd48c4dc562              380 repo/Packages.gz
- db6ff3b35a35b120a5f4a5d97eac839b              261 repo/Release
+ b8b27ebec4e52b646f6b397b3c3d7f82              502 Packages
+ 709e602ab5ae404f2486564309d336a8              358 Packages.gz
+ dbf247fe3c3a7910f1f9b27ad021ce9d              264 Release
 SHA1:
- 70b9e71459635d6be0d6d643d07a27e0b1e2da9c              533 repo/Packages
- fbebafe660a53990edf1ad59742a79ce787b7501              380 repo/Packages.gz
- fb9cfcabd11b292f4da3f87dba6fb740e39f323a              261 repo/Release
+ 615a40703c3243a7ded98f3cc5c32840b1354b75              502 Packages
+ 6ade6301fe455831c30d469dbfefc7bbd0675d31              358 Packages.gz
+ 3b923e95511fa153478ce047870c4562d12e48dc              264 Release
 SHA256:
- f10731b3c001c16dd9841a018fc0accd37e1b10e9cf258bc6583a92ad687745f              533 repo/Packages
- 314b75b5a99a91c31acf361e69887ae8b5df736d8f4e46a0caeb0e91d1735d29              380 repo/Packages.gz
- 205a36cc9d41690d104b09a604dae64acd7aab800014aaced5e582697a966aa8              261 repo/Release
+ 801cbaae548c2ad18904d0efc343f83d151156c7293564ca97fed60ab4a4fe5d              502 Packages
+ 72ce9a5dc7d874f3351a2868e978bb5eac83d196e2130cd165041d0fed16742b              358 Packages.gz
+ b9a1befa0701138c35e470c7c4e9eb705d3fb8ece122c33f1e85b7a38e1d341e              264 Release
 SHA512:
- 9ed656fbaa40527fbf35de70bca48af38f5478b861e45f6c736277f9acbc936cb97c3cc5edd4c2dc3a60b81bb19b68cc0cd97367e7602e4f35d443728662d507              533 repo/Packages
- e92ee590a1c03ceef587e3639135e42cef91aa30b0a235887cc9ce38c3efe5846432d0dfcd1c4afb5875cbfcaef23664ab9f5f91a83083fc2eb313c274344af1              380 repo/Packages.gz
- b37c540d4891023d9160b7d0f512bed4125ffcd1f3c3a37b52c56d01b1ab401ba1d6f1b890d812f4359f2e5900bc3ebaf49692567a05ebd59a18e2b02ee74b44              261 repo/Release
+ 3f59f121af03a994a18e141a02128e22ee83f585cfeebbc6a82570ec564d81b48fc052db66ba04ef71dfb49787ee6a0f49c95093c3e5c5a7c3f5ff05f784c5e4              502 Packages
+ 49ed0997975d40432385ae683421a7b1e8ebcd7794ccdf8024f3c5bb8cf2a2268bab81d5da43bcfb9e3dea9ae3a1c55651935a9000070f4d7825d09247804b90              358 Packages.gz
+ db3573978ce66b2ef1c782cb5bc0ebd465c3d64fd39b0b0f284923031d545d99e9c26ee23f7f8e23ef6f0f1396e78c4d1484c62f9303b2fb6c8aca45119fa4bd              264 Release
