@@ -1,24 +1,24 @@
 Architectures: amd64 i386 armhf source any all
-Codename: XavierBerger/RPi-Monitor-deb/raw/{BRANCH}/repo
+Codename: rpimonitor
 Components: main
-Date: Wed, 17 Aug 2016 18:10:43 UTC
+Date: Wed, 17 Aug 2016 19:47:05 UTC
 Description: RPi-Monitor Debian package repository.
 Label: XavierBerger
 Origin: XavierBerger
 Suite: custom
 MD5Sum:
- b8b27ebec4e52b646f6b397b3c3d7f82              502 Packages
- 709e602ab5ae404f2486564309d336a8              358 Packages.gz
- dbf247fe3c3a7910f1f9b27ad021ce9d              264 Release
+ 6eb56158d2e29e1254a44f97af934f51              502 Packages
+ a08e214cf77f27e650b429f68d1e40cd              357 Packages.gz
+ 15fbbea4d0000d7143fc8457c6c2d85b              228 Release
 SHA1:
- 615a40703c3243a7ded98f3cc5c32840b1354b75              502 Packages
- 6ade6301fe455831c30d469dbfefc7bbd0675d31              358 Packages.gz
- 3b923e95511fa153478ce047870c4562d12e48dc              264 Release
+ 801adfc50bd158899f5238d4a353edcc70aed617              502 Packages
+ db4027b38d6a9bb01d9bd0c69381b2de6d862258              357 Packages.gz
+ f81280176651853b76f9f70e2a502aa3a11849f6              228 Release
 SHA256:
- 801cbaae548c2ad18904d0efc343f83d151156c7293564ca97fed60ab4a4fe5d              502 Packages
- 72ce9a5dc7d874f3351a2868e978bb5eac83d196e2130cd165041d0fed16742b              358 Packages.gz
- b9a1befa0701138c35e470c7c4e9eb705d3fb8ece122c33f1e85b7a38e1d341e              264 Release
+ 7b2735474afab8c7071154481e5322a9493cbf62e916db8216d145436497aa35              502 Packages
+ 1099a7568e4af0b43f5f4702c5fdaa50f704f179ac03ef39fb87e41552bbb9fd              357 Packages.gz
+ 9935049745e850d957b3f951b62c4b1b27d35c140a4559b82066d1bb9cade69e              228 Release
 SHA512:
- 3f59f121af03a994a18e141a02128e22ee83f585cfeebbc6a82570ec564d81b48fc052db66ba04ef71dfb49787ee6a0f49c95093c3e5c5a7c3f5ff05f784c5e4              502 Packages
- 49ed0997975d40432385ae683421a7b1e8ebcd7794ccdf8024f3c5bb8cf2a2268bab81d5da43bcfb9e3dea9ae3a1c55651935a9000070f4d7825d09247804b90              358 Packages.gz
- db3573978ce66b2ef1c782cb5bc0ebd465c3d64fd39b0b0f284923031d545d99e9c26ee23f7f8e23ef6f0f1396e78c4d1484c62f9303b2fb6c8aca45119fa4bd              264 Release
+ 08c48d7f34981f52126fe417e958eabba0c2db9a6a2c57f15ec6ec4bd1a50b853ace0b47224d85a5f0184b1b6743c47dcddcb0d02517c70199787945bdb6c904              502 Packages
+ d75b3d2b31dbca4d9ad858ad3555382c638781966169aaeb3192bd667e93ea8ae8c5783eeb567a3b120e17330bf8052ff71ae899ea5e70a366f8dbf5856f779f              357 Packages.gz
+ da249b9ec6469404afe43322854bd7cca40d53d3940b8b2774fb51109f34aeaa1181147cc317996543606117bd24e3336540e653073e54231acd76ee2eae74e4              228 Release
