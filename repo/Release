@@ -1,24 +1,24 @@
 Architectures: amd64 i386 armhf source any all
 Codename: XavierBerger/RPi-Monitor-deb/raw/devel/repo
 Components: main
-Date: Sun, 26 Jul 2015 19:36:43 UTC
+Date: Wed, 17 Aug 2016 17:34:26 UTC
 Description: RPi-Monitor Debian package repository.
 Label: XavierBerger
 Origin: XavierBerger
 Suite: custom
 MD5Sum:
- 50d747c403fe94b839b12dd95943b8d4              621 Packages
- d1238988e57e4c428bebe9b5f69d3c2d              440 Packages.gz
- d41d8cd98f00b204e9800998ecf8427e                0 Release
+ 09a7342e8de6bd0ceedebbeafc55d4b5              533 Packages
+ eba2a3c96a220f3abef156bf7e335032              381 Packages.gz
+ c8314a931acb446d207ca6e1caff0118              261 Release
 SHA1:
- 0a35da739ccc2cf024d6c980b4ab136e71869402              621 Packages
- d636b919406334644f2c013b52d19d9e8b0af5ca              440 Packages.gz
- da39a3ee5e6b4b0d3255bfef95601890afd80709                0 Release
+ 3f1511e12d5ac414b0f3c5e9741be33277f37833              533 Packages
+ 350b21dc2dd4bd6a592b425cb8ba6eef8ec3dba1              381 Packages.gz
+ 3c259112e6d7a6e7781aef57a443fb054826c291              261 Release
 SHA256:
- 2976b28087a058e04bf13e3b5ed6ab0bf00a948b9c02edd2283c2827158fd20b              621 Packages
- 2203fa718bd25422b8a7e79b0cff994e95b4d1316b09e301e1c07e04c8ead813              440 Packages.gz
- e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 Release
+ b79bcc48d834d69bbd40c9fd2cc3bb459ba66040e83ecfab2864343bd510ae1a              533 Packages
+ 6352fe349d9be262303bc5ba149869f839684b87a9cb5864ab14db81b1ef9227              381 Packages.gz
+ 3bb01e665085648c18220c7a8c7b3bf096386a6c1e22a9da5f8c50ab5ef1febc              261 Release
 SHA512:
- 0ce34581f98fb44a90f46a5bffe6c7c7efe99540ab8ce3dfaea3e033fcc45fff11de8e2b390ae05554c42f13c7e32584d6845835d4313c83ab765ae17a7e3ba1              621 Packages
- 6d060ce1431f66ec794a2b0d9e4043fa99e22dcdd0d3a1d0493336e0b72d4736b7202376891731e4cd2a20af2de0a0abcbd5c3721264ab46429c0c33489858e7              440 Packages.gz
- cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e                0 Release
+ 91138bc9ed286f6f56a85de6daf989a4cd30cabb5d28cc17f4ca78680e61bd2636eb7443dea20fb29c17bdb7c8965cf85861b15556325ba5641e5b4ca738a7a1              533 Packages
+ 7d409af5329f8fb7ec2d73d2c11a2559e730dd1047a423fcd74a55430673b238cf20638372071e093d31f57b5d3e3224f32af75cddc3f50f4a257a51b96d878a              381 Packages.gz
+ 848ef5cee9c2cb81cfe563ddd4a4dee9d078c15b137dcfce3da3d4ed4c1ce6ff224bbb11d7034beb6318a85def617444e056eea4c579091fd2d87f807e7ac831              261 Release

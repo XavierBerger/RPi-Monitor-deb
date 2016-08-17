@@ -116,21 +116,14 @@ if [[ $BRANCH == *"master"* ]] || [[ $continue != *"no"* ]]; then
   rm *.deb Packages.gz
   ln ../packages/rpimonitor_${VERSION}${REVISION}_all.deb rpimonitor_${VERSION}${REVISION}_all.deb
   cd ..
-  dpkg-scanpackages repo /dev/null XavierBerger/RPi-Monitor-deb/raw/${BRANCH}/ > repo/Packages
+  dpkg-scanpackages -h sha256 repo /dev/null XavierBerger/RPi-Monitor-deb/raw/${BRANCH}/ > repo/Packages
   gzip -k repo/Packages
 
   apt-ftparchive -c=repo/apt-release.conf release repo > repo/Release
   rm repo/Release.gpg
   gpg --armor --detach-sign --sign --output repo/Release.gpg repo/Release
 
-  echo
-  echo -e "\033[1mCreating package for Raspberry Pi Store\033[0m"
-  cd store/rpimonitor
-  rm *.deb > /dev/null
-  ln ../../packages/rpimonitor_${VERSION}${REVISION}_all.deb rpimonitor_${VERSION}${REVISION}_all.deb
-  cd ..
-  zip rpimonitor_${VERSION}${REVISION}_all.zip rpimonitor/*
-  cd ..
+
 fi
 
 echo

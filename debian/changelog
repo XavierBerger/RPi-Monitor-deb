@@ -10,6 +10,7 @@ rpimonitor {VERSION}-{REVISION} UNRELEASED; urgency=low
   * Add tools dedicated to generate manpages
   * Add alerts management (executing custom command when alert is raised or cancel)
   * Add Makefile for installation and packege building
+  * Update startup script
   * Bug fixes and cleanup code
 
  -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
