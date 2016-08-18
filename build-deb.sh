@@ -21,6 +21,7 @@ VERSION=$(cat ../RPi-Monitor/VERSION)
 REVISION=$(cat REVISION)
 BRANCH=$(git branch | perl -ne '/^\* (.*)/ and print "$1"')
 
+# Shall we update changelog
 echo -e "\033[1mIs changelog need update for version $(cat ../RPi-Monitor/VERSION)?"
 echo -ne "yes/no ["
 if [[ $BRANCH == *"master"* ]]; then
@@ -35,10 +36,11 @@ if [[ $BRANCH == *"master"* ]] || [[ $continue == *"yes"* ]]; then
   vi debian/changelog
 fi
 
-echo
-echo -e "\033[1mRemoving old ${DPKGSRC} directory\033[0m"
+# Remove old package directory
 sudo rm -fr ${DPKGSRC}
+mkdir ${DPKGSRC}
 
+# Update RPi-Monitor source in ${RPIMONITOR_SRC}
 echo
 echo -e "\033[1mUpdating RPi-Monitor source\033[0m"
 rm -fr ${RPIMONITOR_SRC}
@@ -47,7 +49,7 @@ if [[ $BRANCH == *"master"* ]]; then
   REVISION="-r1"
 else
   mkdir -p ${RPIMONITOR_SRC}
-  cp -a ../RPi-Monitor/* ${RPIMONITOR_SRC}/
+  cp -a ${RPIMONITOR_REPO}/* ${RPIMONITOR_SRC}/
   echo
   echo -e "\033[1mIncrement revision (REVISION=beta${REVISION})?"
   echo -ne "yes/no [no]:\033[0m"
@@ -58,50 +60,52 @@ else
   fi
   REVISION="-beta${REVISION}"
 fi  
-RPIMONITOR_SRC=../${RPIMONITOR_SRC}
-
-echo
-echo -e "\033[1mCreating a new ${DPKGSRC} directory\033[0m"
-mkdir ${DPKGSRC}
 
 echo
 echo -e "\033[1mConstructing debian package structure\033[0m"
-cd ${DPKGSRC}
-cp -a ../debian DEBIAN
-mv DEBIAN/apt-release.conf ../repo
-sed -i "s/{DATE}/$(LANG=EN; date)/" DEBIAN/changelog
-sed -i "s/{VERSION}/${VERSION}/" DEBIAN/changelog
-sed -i "s/{REVISION}/${REVISION}/" DEBIAN/changelog
+pushd ${DPKGSRC} > /dev/null
+  cp -a ../debian DEBIAN
+  mv DEBIAN/apt-release.conf ../repo
+  sed -i "s/{DATE}/$(LANG=EN; date)/" DEBIAN/changelog
+  sed -i "s/{VERSION}/${VERSION}/" DEBIAN/changelog
+  sed -i "s/{REVISION}/${REVISION}/" DEBIAN/changelog
+popd > /dev/null
 
 # Copy from sources
-pushd ${RPIMONITOR_SRC}
+echo
+echo -e "\033[1mGetting RPi-Monitor from sources\033[0m"
+pushd ${RPIMONITOR_SRC} > /dev/null
   export TARGETDIR=${DPKGSRC}
   make install
-popd
+popd > /dev/null
 
 echo
-echo -e "\033[1mPost processing\033[0m"
+echo -e "\033[1mSetting version to ${VERSION}${REVISION}\033[0m"
 
 # Defining version
-sed -i "s/{DEVELOPMENT}/${VERSION}${REVISION}/" DEBIAN/control
-sed -i "s/{DEVELOPMENT}/${VERSION}/" usr/bin/rpimonitord
-sed -i "s/{DEVELOPMENT}/${VERSION}/" usr/share/rpimonitor/web/js/rpimonitor.js
-find etc/rpimonitor/ -type f | sed  's/etc/\/etc/' > DEBIAN/conffiles
+pushd ${DPKGSRC} > /dev/null
+  sed -i "s/{DEVELOPMENT}/${VERSION}${REVISION}/" DEBIAN/control
+  sed -i "s/{DEVELOPMENT}/${VERSION}${REVISION}/" usr/bin/rpimonitord
+  sed -i "s/{DEVELOPMENT}/${VERSION}${REVISION}/" usr/share/rpimonitor/web/js/rpimonitor.js
+  find etc/rpimonitor/ -type f | sed  's/etc/\/etc/' > DEBIAN/conffiles
+popd > /dev/null
 
 # Creating man files
-mkdir -p usr/share/man/man1
-${RPIMONITOR_SRC}/tools/help2man.pl usr/bin/rpimonitord ${VERSION} | gzip -c > usr/share/man/man1/rpimonitord.1.gz
-mkdir -p usr/share/man/man5
-cat etc/rpimonitor/daemon.conf etc/rpimonitor/template/raspbian.conf > rpimonitord.conf
-${RPIMONITOR_SRC}/tools/conf2man.pl rpimonitord.conf ${VERSION} | gzip -c > usr/share/man/man5/rpimonitord.conf.5.gz
+mkdir -p ${DPKGSRC}/usr/share/man/man1
+${RPIMONITOR_SRC}/tools/help2man.pl ${DPKGSRC}/usr/bin/rpimonitord ${VERSION} | gzip -c > ${DPKGSRC}/usr/share/man/man1/rpimonitord.1.gz
+mkdir -p ${DPKGSRC}/usr/share/man/man5
+cat ${DPKGSRC}/etc/rpimonitor/daemon.conf ${DPKGSRC}/etc/rpimonitor/template/raspbian.conf > rpimonitord.conf
+${RPIMONITOR_SRC}/tools/conf2man.pl rpimonitord.conf ${VERSION} | gzip -c > ${DPKGSRC}/usr/share/man/man5/rpimonitord.conf.5.gz
 rm -f rpimonitord.conf
 
+# Building deb package
 echo
 echo -e "\033[1mBuilding package\033[0m"
-find . -type f ! -regex '.*?DEBIAN.*' -printf '%P ' | xargs md5sum > DEBIAN/md5sums
-sudo chown -R root:root etc usr
-cd ..
-dpkg -b ${DPKGSRC} packages/rpimonitor_${VERSION}${REVISION}_all.deb
+pushd ${DPKGSRC} > /dev/null
+  find . -type f ! -regex '.*?DEBIAN.*' -printf '%P ' | xargs md5sum > DEBIAN/md5sums
+  sudo chown -R root:root etc usr
+popd > /dev/null
+dpkg -b ${DPKGSRC} packages/rpimonitor_${VERSION}${REVISION}_all.deb > /dev/null
 
 echo
 echo -e "\033[1mUpdate repository for ${VERSION}?"
@@ -120,6 +124,7 @@ if [[ $BRANCH == *"master"* ]] || [[ $continue != *"no"* ]]; then
   apt-ftparchive -c=apt-release.conf release . > Release
   rm Release.gpg
   gpg --armor --detach-sign --sign --output Release.gpg Release
+  cd ..
 fi
 
 echo
