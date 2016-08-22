@@ -1,3 +1,24 @@
+rpimonitor {VERSION}-{REVISION} UNRELEASED; urgency=low
+
+  * Add logfile in configurable destination (Default: /var/log/rpimonitor.log)
+  * Add possibility to use result of KPI into source with keyword 'data.<kpi>'
+  * Add arch configuration files
+  * Add tools dedicated to generate manpages
+  * Add alerts management (executing custom command when alert is raised or cancel)
+  * Add Makefile for installation and packege building
+  * Add multicolumn view in status page for large screen (Enhancement #77)
+  * Add alert feature able to execute script when necessary (Recovery action, SMS, e-mail, etc.)
+  * Add possibility to set a default value for KPI when source is not existing
+  * Add possibility to set interval to reduce the number of data extraction frequency
+  * Set Status page as default landing page.
+  * Allow to use addons when RPi-Monitor is protected by a reverse proxy.
+  * Set Status page as default landing page.
+  * Rounding temperation to 2 digit as proposed in issue #86
+  * Update startup script
+  * Bug fixes and cleanup code
+
+ -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+
 rpimonitor (2.10-1) UNRELEASED; urgency=low
 
   * Use only data.conf and daemon.conf to avoid duplicate statistics + status when .conf placed in /etc/rpimonitor (Fix issue # 68 )
@@ -6,7 +27,7 @@ rpimonitor (2.10-1) UNRELEASED; urgency=low
   * Add BananaPi configuration from tkaiser (http://forum.lemaker.org/forum.php?mod=viewthread&tid=8137)
   * Add mysql status in services.conf example file
 
- -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+ -- Xavier Berger <berger.xavier@gmail.com>  Tue Jan  6 18:59:47 CET 2015
 
 rpimonitor (2.9.1-1) UNRELEASED; urgency=low
 
