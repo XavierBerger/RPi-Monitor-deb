@@ -9,6 +9,7 @@ rpimonitor {VERSION}-{REVISION} UNRELEASED; urgency=low
   * Add multicolumn view in status page for large screen (Enhancement #77)
   * Add alert feature able to execute script when necessary (Recovery action, SMS, e-mail, etc.)
   * Add possibility to set a default value for KPI when source is not existing
+  * Add possibility to set interval to reduce the number of data extraction frequency
   * Set Status page as default landing page.
   * Allow to use addons when RPi-Monitor is protected by a reverse proxy.
   * Set Status page as default landing page.
