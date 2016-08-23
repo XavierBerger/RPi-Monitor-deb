@@ -46,7 +46,7 @@ echo -e "\033[1mUpdating RPi-Monitor source\033[0m"
 rm -fr ${RPIMONITOR_SRC}
 if [[ $BRANCH == *"master"* ]]; then
   git clone --no-hardlinks ${RPIMONITOR_REPO} ${RPIMONITOR_SRC}
-  REVISION="-r1"
+  REVISION="r4"
 else
   mkdir -p ${RPIMONITOR_SRC}
   cp -a ${RPIMONITOR_REPO}/* ${RPIMONITOR_SRC}/
@@ -58,7 +58,7 @@ else
     ((REVISION++));
     echo ${REVISION} > REVISION
   fi
-  REVISION="-beta${REVISION}"
+  REVISION="beta${REVISION}"
 fi  
 
 echo
@@ -80,13 +80,13 @@ pushd ${RPIMONITOR_SRC} > /dev/null
 popd > /dev/null
 
 echo
-echo -e "\033[1mSetting version to ${VERSION}${REVISION}\033[0m"
+echo -e "\033[1mSetting version to ${VERSION}-${REVISION}\033[0m"
 
 # Defining version
 pushd ${DPKGSRC} > /dev/null
-  sed -i "s/{DEVELOPMENT}/${VERSION}${REVISION}/" DEBIAN/control
-  sed -i "s/{DEVELOPMENT}/${VERSION}${REVISION}/" usr/bin/rpimonitord
-  sed -i "s/{DEVELOPMENT}/${VERSION}${REVISION}/" usr/share/rpimonitor/web/js/rpimonitor.js
+  sed -i "s/{DEVELOPMENT}/${VERSION}-${REVISION}/" DEBIAN/control
+  sed -i "s/{DEVELOPMENT}/${VERSION}-${REVISION}/" usr/bin/rpimonitord
+  sed -i "s/{DEVELOPMENT}/${VERSION}-${REVISION}/" usr/share/rpimonitor/web/js/rpimonitor.js
   find etc/rpimonitor/ -type f | sed  's/etc/\/etc/' > DEBIAN/conffiles
 popd > /dev/null
 
@@ -105,7 +105,7 @@ pushd ${DPKGSRC} > /dev/null
   find . -type f ! -regex '.*?DEBIAN.*' -printf '%P ' | xargs md5sum > DEBIAN/md5sums
   sudo chown -R root:root etc usr
 popd > /dev/null
-dpkg -b ${DPKGSRC} packages/rpimonitor_${VERSION}${REVISION}_all.deb > /dev/null
+dpkg -b ${DPKGSRC} packages/rpimonitor_${VERSION}-${REVISION}_all.deb > /dev/null
 
 echo
 echo -e "\033[1mUpdate repository for ${VERSION}?"
@@ -117,7 +117,7 @@ if [[ $BRANCH == *"master"* ]] || [[ $continue != *"no"* ]]; then
   echo -e "\033[1mUpdating repository for branch \033[31m\033[1m${BRANCH}\033[0m:\033[0m"
   cd repo
   rm *.deb Packages.gz
-  ln ../packages/rpimonitor_${VERSION}${REVISION}_all.deb rpimonitor_${VERSION}${REVISION}_all.deb
+  ln ../packages/rpimonitor_${VERSION}-${REVISION}_all.deb rpimonitor_${VERSION}-${REVISION}_all.deb
   dpkg-scanpackages -h sha256 . /dev/null rpimonitor/ > Packages
   gzip -k Packages
 
@@ -130,4 +130,4 @@ fi
 echo
 echo -ne "\033[1mInstall RPi-Monitor ${VERSION} now? (Ctl+C to cancel)\033[0m"
 read continue
-sudo dpkg -i packages/rpimonitor_${VERSION}${REVISION}_all.deb
+sudo dpkg -i packages/rpimonitor_${VERSION}-${REVISION}_all.deb

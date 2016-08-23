@@ -1,18 +1,16 @@
 rpimonitor {VERSION}-{REVISION} UNRELEASED; urgency=low
 
-  * Add logfile in configurable destination (Default: /var/log/rpimonitor.log)
   * Add possibility to use result of KPI into source with keyword 'data.<kpi>'
-  * Add arch configuration files
-  * Add tools dedicated to generate manpages
-  * Add alerts management (executing custom command when alert is raised or cancel)
-  * Add Makefile for installation and packege building
   * Add multicolumn view in status page for large screen (Enhancement #77)
   * Add alert feature able to execute script when necessary (Recovery action, SMS, e-mail, etc.)
   * Add possibility to set a default value for KPI when source is not existing
   * Add possibility to set interval to reduce the number of data extraction frequency
+  * Add Makefile for installation and packege building
+  * Add tools dedicated to generate manpages
+  * Add arch configuration files
   * Set Status page as default landing page.
+  * Logfile destination is configurable (Default: /var/log/rpimonitor.log)
   * Allow to use addons when RPi-Monitor is protected by a reverse proxy.
-  * Set Status page as default landing page.
   * Rounding temperation to 2 digit as proposed in issue #86
   * Update startup script
   * Bug fixes and cleanup code
