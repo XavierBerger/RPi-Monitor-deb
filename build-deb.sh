@@ -46,7 +46,7 @@ echo -e "\033[1mUpdating RPi-Monitor source\033[0m"
 rm -fr ${RPIMONITOR_SRC}
 if [[ $BRANCH == *"master"* ]]; then
   git clone --no-hardlinks ${RPIMONITOR_REPO} ${RPIMONITOR_SRC}
-  REVISION="r4"
+  REVISION="r5"
 else
   mkdir -p ${RPIMONITOR_SRC}
   cp -a ${RPIMONITOR_REPO}/* ${RPIMONITOR_SRC}/
