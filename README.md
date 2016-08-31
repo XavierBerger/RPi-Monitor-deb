@@ -37,7 +37,7 @@ Add my public key to the trusted key list for apt:
 
 Execute the following command to add rpimonitor into your list of repository:
 
-    sudo wget http://goo.gl/rsel0F -O /etc/apt/sources.list.d/rpimonitor.list
+    sudo wget http://goo.gl/vewCLL -O /etc/apt/sources.list.d/rpimonitor.list
 
 This will add the file `/etc/apt/source.list.d/rpimonitor.list` containing:
 
