@@ -38,7 +38,7 @@ Execute the following command to add rpimonitor into your list of repository:
 This will add the file `/etc/apt/source.list.d/rpimonitor.list` containing:
 
     # RPi-Monitor official repository
-    deb https://github.com XavierBerger/RPi-Monitor-deb/raw/master/repo/
+    deb http://giteduberger.fr rpimonitor/
 
 **Note**: To test unstable version, replace *master* by *devel* into the upper line.
 
