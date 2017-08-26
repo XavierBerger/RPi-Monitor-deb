@@ -27,22 +27,18 @@ Build package:
 
 Build script also create a debian repository. To use this repository follow the instruction bellow:
 
-Activate https transport for apt:
-    
-    sudo apt-get install apt-transport-https ca-certificates
-
 Add my public key to the trusted key list for apt:
 
     sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 2C0D3C0F
 
 Execute the following command to add rpimonitor into your list of repository:
 
-    sudo wget http://goo.gl/rsel0F -O /etc/apt/sources.list.d/rpimonitor.list
+    sudo wget http://goo.gl/vewCLL -O /etc/apt/sources.list.d/rpimonitor.list
 
 This will add the file `/etc/apt/source.list.d/rpimonitor.list` containing:
 
     # RPi-Monitor official repository
-    deb https://github.com XavierBerger/RPi-Monitor-deb/raw/master/repo/
+    deb http://giteduberger.fr rpimonitor/
 
 **Note**: To test unstable version, replace *master* by *devel* into the upper line.
 
