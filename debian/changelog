@@ -1,4 +1,14 @@
-rpimonitor {VERSION}-{REVISION} UNRELEASED; urgency=low
+rpimonitor ({VERSION}-{REVISION}) UNRELEASED; urgency=low
+
+  * Fix interactive configuration mode to accept commands with parameters
+  * Fix various bug occuring with raspbian stretch
+  * Fix info updated packages after upgrade
+  * Fix typos and other bugs
+  * Add configuration and tools (/usr/share/rpimonitor/scripts/) for OrangePi and Allwinner_H3
+
+ -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+
+rpimonitor (2.11-r5) UNRELEASED; urgency=low
 
   * Add possibility to use result of KPI into source with keyword 'data.<kpi>'
   * Add multicolumn view in status page for large screen (Enhancement #77)
@@ -15,7 +25,7 @@ rpimonitor {VERSION}-{REVISION} UNRELEASED; urgency=low
   * Update startup script
   * Bug fixes and cleanup code
 
- -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+ -- Xavier Berger <berger.xavier@gmail.com>  Wed Aug 24 18:37:21 CEST 2016
 
 rpimonitor (2.10-1) UNRELEASED; urgency=low
 

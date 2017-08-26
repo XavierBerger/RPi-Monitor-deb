@@ -1,5 +1,5 @@
 #!/bin/bash
-# (c) 2013-2016 - Xavier Berger - http://rpi-experiences.blogspot.fr/
+# (c) 2013-2017 - Xavier Berger - http://rpi-experiences.blogspot.fr/
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -40,24 +40,34 @@ fi
 sudo rm -fr ${DPKGSRC}
 mkdir ${DPKGSRC}
 
+function updateRevision(){
+  echo
+  echo -e "\033[1mUpdate revision (REVISION=beta${REVISION})?"
+  echo -ne "yes/no [no]:\033[0m"
+  read continue
+  if [[ $continue == *"yes"* ]]; then
+    ((REVISION++))
+    echo -n "Set revicion number [${REVISION}]: "
+    read choice
+    if [[ "x${choice}" != "x" ]]; then
+      REVISION=${choice}
+    fi
+    echo ${REVISION} > REVISION
+  fi
+}
+
 # Update RPi-Monitor source in ${RPIMONITOR_SRC}
 echo
 echo -e "\033[1mUpdating RPi-Monitor source\033[0m"
 rm -fr ${RPIMONITOR_SRC}
 if [[ $BRANCH == *"master"* ]]; then
   git clone --no-hardlinks ${RPIMONITOR_REPO} ${RPIMONITOR_SRC}
-  REVISION="r5"
+  updateRevision
+  REVISION="r${REVISION}"
 else
   mkdir -p ${RPIMONITOR_SRC}
   cp -a ${RPIMONITOR_REPO}/* ${RPIMONITOR_SRC}/
-  echo
-  echo -e "\033[1mIncrement revision (REVISION=beta${REVISION})?"
-  echo -ne "yes/no [no]:\033[0m"
-  read continue
-  if [[ $continue == *"yes"* ]]; then
-    ((REVISION++));
-    echo ${REVISION} > REVISION
-  fi
+  updateRevision
   REVISION="beta${REVISION}"
 fi  
 
