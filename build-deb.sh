@@ -42,7 +42,12 @@ mkdir ${DPKGSRC}
 
 function updateRevision(){
   echo
-  echo -e "\033[1mUpdate revision (REVISION=beta${REVISION})?"
+  if [[ $BRANCH == *"master"* ]]; then
+    PREFIX=r
+  else
+    PREFIX=beta
+  fi
+  echo -e "\033[1mUpdate revision (REVISION=${PREFIX}${REVISION})?"
   echo -ne "yes/no [no]:\033[0m"
   read continue
   if [[ $continue == *"yes"* ]]; then
