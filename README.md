@@ -13,7 +13,7 @@ Before using **RPi-Monitor-deb** it is required to install the dependencies. To 
 
 ## Package creation
 
-Clone RPi-Monitor and RPi-Minitor-dev:
+Clone RPi-Monitor and RPi-Monitor-dev:
 
     git clone https://github.com/XavierBerger/RPi-Monitor.git
     git clone https://github.com/XavierBerger/RPi-Monitor-deb.git
