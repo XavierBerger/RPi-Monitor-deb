@@ -1,12 +1,20 @@
 rpimonitor ({VERSION}-{REVISION}) UNRELEASED; urgency=low
 
+  * Fix service status template (#172)
+  * Implement sortable status items written by iaa (#166 #197)
+  * Add snmp agent "pass_persist" extension
+
+ -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+
+rpimonitor (2.12-r1) UNRELEASED; urgency=low
+
   * Fix interactive configuration mode to accept commands with parameters
   * Fix various bug occuring with raspbian stretch
   * Fix info updated packages after upgrade
   * Fix typos and other bugs
   * Add configuration and tools (/usr/share/rpimonitor/scripts/) for OrangePi and Allwinner_H3
 
- -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
+ -- Xavier Berger <berger.xavier@gmail.com>  Tue Aug 29 21:15:17 CEST 2017
 
 rpimonitor (2.11-r5) UNRELEASED; urgency=low
 

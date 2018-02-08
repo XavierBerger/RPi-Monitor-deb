@@ -82,8 +82,8 @@ pushd ${DPKGSRC} > /dev/null
   cp -a ../debian DEBIAN
   mv DEBIAN/apt-release.conf ../repo
   sed -i "s/{DATE}/$(LANG=EN; date)/" DEBIAN/changelog
-  sed -i "s/{VERSION}/${VERSION}/" DEBIAN/changelog
-  sed -i "s/{REVISION}/${REVISION}/" DEBIAN/changelog
+  sed -i "s/{VERSION}/${VERSION}/"    DEBIAN/changelog
+  sed -i "s/{REVISION}/${REVISION}/"  DEBIAN/changelog
 popd > /dev/null
 
 # Copy from sources

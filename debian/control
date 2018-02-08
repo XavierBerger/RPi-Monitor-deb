@@ -2,6 +2,6 @@ Package: rpimonitor
 Version: {DEVELOPMENT}
 Architecture: all
 Section: misc
-Depends: perl, librrds-perl, libhttp-daemon-perl (>= 6.0.0) | libwww-perl (<< 6.0.0), libjson-perl, libipc-sharelite-perl, libfile-which-perl, aptitude
+Depends: perl, librrds-perl, libhttp-daemon-perl (>= 6.0.0) | libwww-perl (<< 6.0.0), libjson-perl, libipc-sharelite-perl, libfile-which-perl, libsnmp-extension-passpersist-perl, aptitude
 Maintainer: Xavier Berger <berger.xavier@gmail.com>
 Description: RPi-Monitor is a monitoring application designed to be smart and powerfull.
