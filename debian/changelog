@@ -3,6 +3,7 @@ rpimonitor ({VERSION}-{REVISION}) UNRELEASED; urgency=low
   * Fix service status template (#172)
   * Implement sortable status items written by iaa (#166 #197)
   * Add snmp agent "pass_persist" extension
+  * Add readonly option disabling disk write
 
  -- Xavier Berger <berger.xavier@gmail.com>  {DATE}
 
