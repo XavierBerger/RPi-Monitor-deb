@@ -35,12 +35,10 @@ Execute the following command to add rpimonitor into your list of repository:
 
     sudo wget http://goo.gl/vewCLL -O /etc/apt/sources.list.d/rpimonitor.list
 
-This will add the file `/etc/apt/source.list.d/rpimonitor.list` containing:
+This will add the file `/etc/apt/sources.list.d/rpimonitor.list` containing:
 
     # RPi-Monitor official repository
     deb http://giteduberger.fr rpimonitor/
-
-**Note**: To test unstable version, replace *master* by *devel* into the upper line.
 
 Install **RPi-Monitor**
 
