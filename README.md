@@ -29,6 +29,7 @@ Build script also create a debian repository. To use this repository follow the 
 
 Add my public key to the trusted key list for apt:
 
+    sudo apt-get install dirmngr
     sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 2C0D3C0F
 
 Execute the following command to add rpimonitor into your list of repository:
