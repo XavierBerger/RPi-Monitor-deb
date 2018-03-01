@@ -121,6 +121,8 @@ pushd ${DPKGSRC} > /dev/null
   sudo chown -R root:root etc usr
 popd > /dev/null
 dpkg -b ${DPKGSRC} packages/rpimonitor_${VERSION}-${REVISION}_all.deb > /dev/null
+rm packages/rpimonitor_latest.deb
+ln -sr packages/rpimonitor_${VERSION}-${REVISION}_all.deb packages/rpimonitor_latest.deb
 
 echo
 echo -e "\033[1mUpdate repository for ${VERSION}?"
