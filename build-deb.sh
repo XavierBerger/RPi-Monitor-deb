@@ -122,7 +122,7 @@ pushd ${DPKGSRC} > /dev/null
 popd > /dev/null
 dpkg -b ${DPKGSRC} packages/rpimonitor_${VERSION}-${REVISION}_all.deb > /dev/null
 rm packages/rpimonitor_latest.deb
-ln -sr packages/rpimonitor_${VERSION}-${REVISION}_all.deb packages/rpimonitor_latest.deb
+cp packages/rpimonitor_${VERSION}-${REVISION}_all.deb packages/rpimonitor_latest.deb
 
 echo
 echo -e "\033[1mUpdate repository for ${VERSION}?"
