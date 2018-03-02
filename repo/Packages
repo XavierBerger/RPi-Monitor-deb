@@ -1,11 +1,11 @@
 Package: rpimonitor
-Version: 2.13-beta3
+Version: 2.13-beta4
 Architecture: all
 Maintainer: Xavier Berger <berger.xavier@gmail.com>
 Depends: perl, librrds-perl, libhttp-daemon-perl (>= 6.0.0) | libwww-perl (<< 6.0.0), libjson-perl, libipc-sharelite-perl, libfile-which-perl, libsnmp-extension-passpersist-perl, aptitude
-Filename: rpimonitor/./rpimonitor_2.13-beta3_all.deb
-Size: 484334
-SHA256: f69a670ab29b7c3aa20d58831daf25cd03d94e13a6d3bc5995ab5fe1731a1dd6
+Filename: rpimonitor/./rpimonitor_2.13-beta4_all.deb
+Size: 484568
+SHA256: d0c62da9946a1b909d17f2d9f01295c49beb498d7115876d1a21e80ea21d5066
 Section: misc
 Description: RPi-Monitor is a monitoring application designed to be smart and powerfull.
 
