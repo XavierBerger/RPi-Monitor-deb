@@ -2,6 +2,7 @@ rpimonitor ({VERSION}-{REVISION}) UNRELEASED; urgency=low
 
   * Implement sortable status items written by iaa (#166 #197)
   * Create documentation in https://xavierberger.github.io/RPi-Monitor-docs/index.html
+  * Generate manpage from documentation
   * Add snmp agent "pass_persist" extension
   * Add readonly option disabling disk write
   * Add LinkToGraph function (#201)

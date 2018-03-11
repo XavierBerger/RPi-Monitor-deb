@@ -105,14 +105,6 @@ pushd ${DPKGSRC} > /dev/null
   find etc/rpimonitor/ -type f | sed  's/etc/\/etc/' > DEBIAN/conffiles
 popd > /dev/null
 
-# Creating man files
-mkdir -p ${DPKGSRC}/usr/share/man/man1
-${RPIMONITOR_SRC}/tools/help2man.pl ${DPKGSRC}/usr/bin/rpimonitord ${VERSION} | gzip -c > ${DPKGSRC}/usr/share/man/man1/rpimonitord.1.gz
-mkdir -p ${DPKGSRC}/usr/share/man/man5
-cat ${DPKGSRC}/etc/rpimonitor/daemon.conf ${DPKGSRC}/etc/rpimonitor/template/raspbian.conf > rpimonitord.conf
-${RPIMONITOR_SRC}/tools/conf2man.pl rpimonitord.conf ${VERSION} | gzip -c > ${DPKGSRC}/usr/share/man/man5/rpimonitord.conf.5.gz
-rm -f rpimonitord.conf
-
 # Building deb package
 echo
 echo -e "\033[1mBuilding package\033[0m"
