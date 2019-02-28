@@ -90,7 +90,7 @@ popd > /dev/null
 echo
 echo -e "\033[1mGetting RPi-Monitor from sources\033[0m"
 pushd ${RPIMONITOR_SRC} > /dev/null
-  export TARGETDIR=${DPKGSRC}
+  ./configure --dest=${DPKGSRC} --init=sysvinit --with-all
   make install
 popd > /dev/null
 
@@ -102,7 +102,8 @@ pushd ${DPKGSRC} > /dev/null
   sed -i "s/{DEVELOPMENT}/${VERSION}-${REVISION}/" DEBIAN/control
   sed -i "s/{DEVELOPMENT}/${VERSION}-${REVISION}/" usr/bin/rpimonitord
   sed -i "s/{DEVELOPMENT}/${VERSION}-${REVISION}/" usr/share/rpimonitor/web/js/rpimonitor.js
-  find etc/rpimonitor/ -type f | sed  's/etc/\/etc/' > DEBIAN/conffiles
+  echo "/etc/rpimonitor.conf" > DEBIAN/conffiles
+  find etc/rpimonitor.d/ -type f | sed  's/etc/\/etc/' >> DEBIAN/conffiles
 popd > /dev/null
 
 # Building deb package
